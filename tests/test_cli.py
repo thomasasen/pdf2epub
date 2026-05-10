@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 from pdf2epub_recovery.cli import main
-from tests.helpers import write_text_pdf
+from tests.helpers import write_text_and_image_pdf, write_text_pdf, write_text_table_pdf
 
 
 def test_help_runs(capsys) -> None:
@@ -99,6 +99,60 @@ def test_convert_creates_epub_and_report(tmp_path: Path) -> None:
     assert 'class="body-text"' in xhtml
     assert "Sample Header" not in xhtml
     assert ">1<" not in xhtml
+
+
+def test_convert_preserves_simple_embedded_image(tmp_path: Path) -> None:
+    pdf = tmp_path / "sample-image.pdf"
+    write_text_and_image_pdf(pdf)
+    epub = tmp_path / "book.epub"
+    report = tmp_path / "book.report.json"
+
+    exit_code = main(["convert", str(pdf), "--out", str(epub), "--report", str(report)])
+
+    assert exit_code == 0
+    report_payload = json.loads(report.read_text(encoding="utf-8"))
+    assert report_payload["actions"]["images_detected"] == 1
+    assert report_payload["actions"]["images_preserved"] == 1
+    assert report_payload["actions"]["images_not_preserved"] == 0
+
+    with zipfile.ZipFile(epub) as archive:
+        names = archive.namelist()
+        xhtml = "\n".join(
+            archive.read(name).decode("utf-8")
+            for name in names
+            if name.endswith(".xhtml")
+        )
+
+    assert any(name.endswith(".png") for name in names)
+    assert "<figure" in xhtml
+    assert '<img src="images/' in xhtml
+    assert "Image from page 1" in xhtml
+
+
+def test_convert_preserves_obvious_text_table_as_fallback(tmp_path: Path) -> None:
+    pdf = tmp_path / "sample-table.pdf"
+    write_text_table_pdf(pdf)
+    epub = tmp_path / "book.epub"
+    report = tmp_path / "book.report.json"
+
+    exit_code = main(["convert", str(pdf), "--out", str(epub), "--report", str(report)])
+
+    assert exit_code == 0
+    report_payload = json.loads(report.read_text(encoding="utf-8"))
+    assert report_payload["actions"]["table_like_blocks_detected"] == 1
+    assert report_payload["actions"]["table_fallbacks_rendered"] == 1
+    assert any(warning["code"] == "table_fallback_used" for warning in report_payload["warnings"])
+
+    with zipfile.ZipFile(epub) as archive:
+        xhtml = "\n".join(
+            archive.read(name).decode("utf-8")
+            for name in archive.namelist()
+            if name.endswith(".xhtml")
+        )
+
+    assert 'class="table-fallback"' in xhtml
+    assert "<pre>Name        Score       Grade" in xhtml
+    assert 'class="body-text">Name' not in xhtml
 
 
 def test_convert_keep_artifacts_keeps_headers(tmp_path: Path) -> None:

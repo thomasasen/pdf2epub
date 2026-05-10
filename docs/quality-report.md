@@ -13,6 +13,8 @@ The report answers:
 - Were page numbers, headers, or footers removed?
 - Was reading order uncertain?
 - Were unsupported features detected?
+- Were detected images preserved or reported as unsupported?
+- Were table-like blocks preserved with a fallback?
 - Was EPUB validation run?
 - Which warnings need manual review?
 
@@ -34,7 +36,12 @@ The report answers:
     "headers_removed": 41,
     "footers_removed": 41,
     "hyphenations_repaired": 312,
-    "line_wraps_repaired": 927
+    "line_wraps_repaired": 927,
+    "images_detected": 6,
+    "images_preserved": 4,
+    "images_not_preserved": 2,
+    "table_like_blocks_detected": 3,
+    "table_fallbacks_rendered": 3
   },
   "removed_artifacts": [
     {
@@ -57,8 +64,22 @@ The report answers:
     }
   ],
   "reading_order_warnings": [],
-  "unsupported_feature_warnings": [],
-  "warnings": [],
+  "unsupported_feature_warnings": [
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 12 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 11
+    }
+  ],
+  "warnings": [
+    {
+      "code": "table_fallback_used",
+      "message": "Possible table-like text was preserved as a preformatted fallback; full table reconstruction is not implemented.",
+      "severity": "warning",
+      "page_index": 23
+    }
+  ],
   "dependency_notes": [
     "PyMuPDF used for native text extraction.",
     "EbookLib used for basic EPUB writing.",
@@ -82,7 +103,7 @@ MVP 1 uses a simple explainable score starting at 100 and subtracting for:
 - textless/image-only pages
 - possible multi-column layout
 - reading-order warnings
-- unsupported detected features, such as images not yet rendered
+- unsupported detected features, such as images that could not be preserved
 - zero extracted text
 
 The score is not a promise of perfect conversion. It is a compact risk signal backed by the detailed warnings and action counts.

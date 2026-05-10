@@ -28,15 +28,19 @@ This project follows short vertical slices.
 - [x] Optional JSON quality report via `--report`.
 - [x] Clear optional EPUBCheck validation behavior.
 - [x] Simple local web interface with progress and log.
+- [x] Web upload supports drag-and-drop.
+- [x] Web options include plain-language explanations.
+- [x] EPUB output has reader-friendly CSS and basic paragraph spacing.
+- [x] Blank lines inside extracted blocks preserve paragraph breaks.
 
-MVP 1 intentionally does not implement OCR, complex table reconstruction, image preservation in EPUB output, GUI workflows, or multi-engine extraction.
+MVP 1 intentionally does not implement OCR, complex table reconstruction, hosted/multi-user workflows, or multi-engine extraction.
 
 ## Next slice - Preserve simple non-text content
 
-- [ ] Preserve simple embedded images in EPUB output.
-- [ ] Warn with image counts and source pages when images cannot be preserved.
-- [ ] Detect obvious table-like blocks.
-- [ ] Render simple text tables or use a safe fallback.
+- [x] Preserve simple embedded images in EPUB output.
+- [x] Warn with image counts and source pages when images cannot be preserved.
+- [x] Detect obvious table-like blocks.
+- [x] Render simple text tables or use a safe fallback.
 - [ ] Add debug artifacts for removed content and ordered blocks.
 
 ## Future - Better layout recovery

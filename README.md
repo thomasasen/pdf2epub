@@ -50,19 +50,27 @@ Implemented MVP 1 scope:
 - Simple one-column reading order.
 - Basic paragraph reconstruction and conservative dehyphenation.
 - Basic reflowable EPUB output with EbookLib.
+- Reader-friendly EPUB CSS and basic paragraph spacing.
+- Simple embedded image preservation in EPUB output.
+- Image preservation counts and unsupported-image warnings in reports.
+- Obvious text-table detection with preformatted EPUB fallback.
 - JSON quality reports.
 - CLI-first, local/offline workflow.
 - Simple local web interface with progress and conversion log.
+- Drag-and-drop PDF upload in the web interface.
+- Plain-language explanations for web conversion options.
 
 Supported input:
 - Native-text, mostly one-column PDFs.
 - Text-centric PDFs with simple repeated page artifacts.
+- Simple embedded PNG, JPEG, and GIF images that PyMuPDF can extract directly.
+- Obvious text tables with spacing, tabs, or pipe-separated columns.
 
 Known limitations:
 - OCR is not implemented.
 - Image-only/scanned pages are reported, not recovered.
-- Complex tables are not reconstructed.
-- Images are detected in reports but not preserved in EPUB output yet.
+- Complex tables are not reconstructed; simple text tables use a readable fallback.
+- Masked, transparent, transformed, or unusual image encodings may be reported but not preserved.
 - Multi-column documents may warn and can have imperfect reading order.
 - EPUBCheck validation is optional and only runs if an `epubcheck` executable is configured on `PATH`.
 
@@ -79,6 +87,8 @@ PDF
 -> remove safe page artifacts
 -> resolve reading order
 -> rebuild paragraphs
+-> preserve simple images or report unsupported cases
+-> preserve obvious text tables as fallback blocks
 -> render EPUB
 -> report quality
 ```

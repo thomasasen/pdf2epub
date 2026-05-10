@@ -1,55 +1,72 @@
 # START HERE
 
-Use this order.
+Use this order for local development.
 
-## 1. Create repository
+## 1. Install
 
-```bash
-mkdir pdf2epub-recovery
-cd pdf2epub-recovery
-git init
-```
+From the repository root:
 
-Copy all files from this package into the repository root.
-
-## 2. Create development environment
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -U pip
+```powershell
 python -m pip install -e ".[dev]"
 ```
 
-## 3. Validate bootstrap
+## 2. Start the web interface
 
-```bash
-python -m pytest
-pdf2epub-recovery --help
+```powershell
+python -m pdf2epub_recovery web
 ```
 
-## 4. First Codex task
-
-Give Codex this:
+Open:
 
 ```text
-Read AGENTS.md, README.md, docs/roadmap.md, and the current source/tests.
-
-Goal:
-Review the bootstrap for correctness and minimalism.
-
-Constraints:
-- Do not implement conversion yet.
-- Do not add heavy dependencies.
-- Fix only real bootstrap issues.
-- Keep changes small and tested.
-
-Done when:
-- pytest passes
-- CLI --help works
-- summary states changed / validated / unverified
+http://127.0.0.1:8765/
 ```
 
-## 5. Second Codex task
+Stop the server with `Ctrl+C` in the terminal where it is running.
 
-After bootstrap is clean, start Phase 1 from `docs/roadmap.md`.
+If the port is already in use:
+
+```powershell
+python -m pdf2epub_recovery web --port 8770
+```
+
+## 3. Use the CLI directly
+
+```powershell
+python -m pdf2epub_recovery --help
+python -m pdf2epub_recovery profile input.pdf --out profile.json
+python -m pdf2epub_recovery extract input.pdf --out debug-extraction.json
+python -m pdf2epub_recovery convert input.pdf --out book.epub --report book.report.json
+```
+
+The installed console script may also work when it is on your `PATH`:
+
+```powershell
+pdf2epub-recovery web
+```
+
+On Windows, prefer the `python -m pdf2epub_recovery ...` form if the script is not recognized.
+
+## 4. Validate changes
+
+```powershell
+python -m pytest
+python -m ruff check .
+```
+
+## Current status
+
+MVP 1 is implemented:
+- native-text PDF profiling and extraction
+- conservative page artifact removal
+- simple reading order and paragraph reconstruction
+- basic EPUB output with simple embedded image preservation
+- obvious text-table detection with readable EPUB fallback
+- JSON quality report
+- local web UI with progress log, drag-and-drop upload, and explained options
+
+Still intentionally unsupported:
+- OCR for scanned PDFs
+- complex table reconstruction beyond simple text-table fallback
+- masked, transparent, or unusual image preservation cases
+- reliable multi-column reading order

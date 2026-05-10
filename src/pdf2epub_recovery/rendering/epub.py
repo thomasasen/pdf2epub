@@ -30,6 +30,16 @@ def render_epub(ir: DocumentIR, output_path: Path) -> None:
 
     chapter = epub.EpubHtml(title=title, file_name="text.xhtml", lang=language)
     chapter.content = render_body_xhtml(ir)
+    image_items = [
+        epub.EpubItem(
+            uid=element.image.image_id,
+            file_name=element.image.file_name,
+            media_type=element.image.media_type,
+            content=element.image.data,
+        )
+        for element in ir.elements
+        if element.element_type == "image" and element.image is not None
+    ]
 
     css = epub.EpubItem(
         uid="style",
@@ -40,6 +50,8 @@ def render_epub(ir: DocumentIR, output_path: Path) -> None:
     chapter.add_item(css)
 
     book.add_item(chapter)
+    for item in image_items:
+        book.add_item(item)
     book.add_item(css)
     book.add_item(epub.EpubNcx())
     book.add_item(epub.EpubNav())

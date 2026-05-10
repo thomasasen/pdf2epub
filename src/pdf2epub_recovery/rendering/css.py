@@ -49,4 +49,26 @@ h1 + p,
 p.short + p {
   text-indent: 0;
 }
+
+figure.image {
+  margin: 1.2em 0;
+  text-align: center;
+}
+
+figure.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure.table-fallback {
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+figure.table-fallback pre {
+  margin: 0;
+  font-family: ui-monospace, "Courier New", monospace;
+  line-height: 1.35;
+  white-space: pre;
+}
 """.strip()

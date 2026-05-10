@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import asdict, dataclass, field, is_dataclass
 from pathlib import Path
 from typing import Any, Literal
@@ -18,6 +19,11 @@ def json_ready(value: Any) -> Any:
         return {key: json_ready(item) for key, item in asdict(value).items()}
     if isinstance(value, Path):
         return str(value)
+    if isinstance(value, bytes):
+        return {
+            "byte_count": len(value),
+            "sha256": hashlib.sha256(value).hexdigest(),
+        }
     if isinstance(value, list):
         return [json_ready(item) for item in value]
     if isinstance(value, tuple):
@@ -95,6 +101,34 @@ class RawTextBlock:
 
 
 @dataclass(frozen=True)
+class ExtractedImage:
+    """Raw extracted image occurrence with provenance and optional bytes."""
+
+    image_id: str
+    page_index: int
+    page_width: float
+    page_height: float
+    bbox: BBox
+    source_engine: str
+    xref: int | None = None
+    extension: str | None = None
+    media_type: str | None = None
+    data: bytes | None = None
+    pixel_width: int | None = None
+    pixel_height: int | None = None
+    confidence: float = 0.8
+    warnings: list[QualityWarning] = field(default_factory=list)
+
+    def source_ref(self) -> SourceRef:
+        return SourceRef(
+            page_index=self.page_index,
+            block_id=self.image_id,
+            bbox=self.bbox,
+            engine=self.source_engine,
+        )
+
+
+@dataclass(frozen=True)
 class ExtractedPage:
     """A page worth of raw extraction facts."""
 
@@ -102,6 +136,7 @@ class ExtractedPage:
     width: float
     height: float
     text_blocks: list[RawTextBlock] = field(default_factory=list)
+    images: list[ExtractedImage] = field(default_factory=list)
     image_count: int = 0
     warnings: list[QualityWarning] = field(default_factory=list)
 
@@ -177,15 +212,32 @@ class Paragraph:
 
 
 @dataclass(frozen=True)
+class DocumentImage:
+    """Image resource ready for EPUB rendering."""
+
+    image_id: str
+    file_name: str
+    media_type: str
+    data: bytes
+    alt_text: str
+    source_refs: list[SourceRef]
+    pixel_width: int | None = None
+    pixel_height: int | None = None
+    confidence: float = 0.8
+    warnings: list[QualityWarning] = field(default_factory=list)
+
+
+@dataclass(frozen=True)
 class DocumentElement:
     """Generic document IR element."""
 
     element_id: str
-    element_type: Literal["paragraph", "warning"]
-    text: str
+    element_type: Literal["paragraph", "image", "table", "warning"]
+    text: str = ""
     source_refs: list[SourceRef] = field(default_factory=list)
     confidence: float = 0.9
     warnings: list[QualityWarning] = field(default_factory=list)
+    image: DocumentImage | None = None
 
 
 @dataclass(frozen=True)
@@ -222,6 +274,11 @@ class ReportActions:
     footers_removed: int = 0
     hyphenations_repaired: int = 0
     line_wraps_repaired: int = 0
+    images_detected: int = 0
+    images_preserved: int = 0
+    images_not_preserved: int = 0
+    table_like_blocks_detected: int = 0
+    table_fallbacks_rendered: int = 0
 
 
 @dataclass(frozen=True)

@@ -16,6 +16,18 @@ def render_body_xhtml(ir: DocumentIR) -> str:
         if element.element_type == "paragraph":
             css_class = "short" if _looks_like_short_standalone_text(element.text) else "body-text"
             parts.append(f'<p class="{css_class}">{escape(element.text, quote=False)}</p>')
+        elif element.element_type == "image" and element.image:
+            src = escape(element.image.file_name, quote=True)
+            alt = escape(element.image.alt_text, quote=True)
+            parts.append(
+                f'<figure class="image"><img src="{src}" alt="{alt}" /></figure>'
+            )
+        elif element.element_type == "table":
+            parts.append(
+                '<figure class="table-fallback">'
+                f"<pre>{escape(element.text, quote=False)}</pre>"
+                "</figure>"
+            )
     parts.append("</section>")
     return "\n".join(parts)
 

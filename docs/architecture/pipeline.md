@@ -26,16 +26,17 @@ The first implemented vertical slice is deliberately narrower:
 ```text
 native-text PDF
 -> PyMuPDF profile
--> PyMuPDF text block extraction
+-> PyMuPDF text and simple image extraction
 -> safe page artifact removal
 -> simple reading order
+-> simple table-like block detection
 -> simple paragraph reconstruction
 -> DocumentIR
 -> EbookLib EPUB
 -> JSON quality report
 ```
 
-MVP 1 prefers warnings and preserved text over aggressive cleanup. It does not run OCR, reconstruct complex tables, preserve images in EPUB output, or solve multi-column reading order.
+MVP 1 prefers warnings and preserved text over aggressive cleanup. It does not run OCR, reconstruct complex tables, or solve multi-column reading order. Simple extractable PNG, JPEG, and GIF images are preserved; unsupported image cases are reported. Obvious text-table blocks are preserved with a readable fallback.
 
 ## Main layers
 
@@ -61,7 +62,7 @@ Purpose:
 
 MVP implementation:
 - `extraction/pymupdf_extractor.py`
-- extracts page size, text blocks, block bbox, block id, engine, confidence, and empty-page warnings
+- extracts page size, text blocks, simple image bytes/metadata, bbox, ids, engine, confidence, and empty-page warnings
 
 ### 3. Cleaning
 
@@ -92,14 +93,28 @@ Purpose:
 - reconstruct paragraphs
 - repair safe line wrapping and hyphenation
 - preserve paragraph breaks when unsure
+- detect obvious table-like text before paragraph merging
 
 MVP implementation:
 - `structure/paragraphs.py`
+- `structure/tables.py`
 - merges lines inside blocks
 - cautiously merges adjacent aligned blocks
 - supports `--no-dehyphenate`
+- preserves obvious text tables as preformatted fallback elements
 
-### 6. Rendering
+### 6. Images
+
+Purpose:
+- preserve straightforward embedded images
+- keep image provenance and source pages
+- report unsupported image cases instead of silently dropping them
+
+MVP implementation:
+- PyMuPDF-extracted PNG, JPEG, and GIF image bytes become `image` elements in the IR
+- masked/transparent or unsupported image formats are counted and warned in the report
+
+### 7. Rendering
 
 Purpose:
 - generate semantic EPUB
@@ -111,8 +126,9 @@ MVP implementation:
 - `rendering/xhtml.py`
 - `rendering/css.py`
 - uses EbookLib
+- renders paragraphs and simple images as semantic XHTML
 
-### 7. Validation
+### 8. Validation
 
 Purpose:
 - run EPUBCheck when available

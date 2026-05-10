@@ -1,0 +1,4976 @@
+{
+  "input_path": "demo\\DataScienceBookV3.pdf",
+  "output_path": "demo\\DataScienceBookV3.epub",
+  "status": "warning",
+  "quality_score": 85,
+  "page_count": 196,
+  "native_text_page_count": 196,
+  "image_only_or_no_text_page_count": 0,
+  "total_raw_blocks": 2806,
+  "total_paragraphs": 2336,
+  "actions": {
+    "page_numbers_removed": 193,
+    "headers_removed": 12,
+    "footers_removed": 0,
+    "hyphenations_repaired": 1298,
+    "line_wraps_repaired": 6081,
+    "images_detected": 112,
+    "images_preserved": 9,
+    "images_not_preserved": 103,
+    "table_like_blocks_detected": 2,
+    "table_fallbacks_rendered": 2
+  },
+  "removed_artifacts": [
+    {
+      "artifact_id": "a-page-number-p0004-b0015",
+      "artifact_type": "page_number",
+      "text": "3",
+      "source_ref": {
+        "page_index": 3,
+        "block_id": "p0004-b0015",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0005-b0007",
+      "artifact_type": "page_number",
+      "text": "4",
+      "source_ref": {
+        "page_index": 4,
+        "block_id": "p0005-b0007",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0006-b0009",
+      "artifact_type": "page_number",
+      "text": "5",
+      "source_ref": {
+        "page_index": 5,
+        "block_id": "p0006-b0009",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0007-b0012",
+      "artifact_type": "page_number",
+      "text": "6",
+      "source_ref": {
+        "page_index": 6,
+        "block_id": "p0007-b0012",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0008-b0017",
+      "artifact_type": "page_number",
+      "text": "7",
+      "source_ref": {
+        "page_index": 7,
+        "block_id": "p0008-b0017",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0009-b0006",
+      "artifact_type": "page_number",
+      "text": "8",
+      "source_ref": {
+        "page_index": 8,
+        "block_id": "p0009-b0006",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0010-b0005",
+      "artifact_type": "page_number",
+      "text": "9",
+      "source_ref": {
+        "page_index": 9,
+        "block_id": "p0010-b0005",
+        "bbox": {
+          "x0": 508.5,
+          "y0": 723.59521484375,
+          "x1": 515.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0011-b0007",
+      "artifact_type": "page_number",
+      "text": "10",
+      "source_ref": {
+        "page_index": 10,
+        "block_id": "p0011-b0007",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0012-b0009",
+      "artifact_type": "page_number",
+      "text": "11",
+      "source_ref": {
+        "page_index": 11,
+        "block_id": "p0012-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0013-b0011",
+      "artifact_type": "page_number",
+      "text": "12",
+      "source_ref": {
+        "page_index": 12,
+        "block_id": "p0013-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0014-b0011",
+      "artifact_type": "header",
+      "text": "Test Yourself",
+      "source_ref": {
+        "page_index": 13,
+        "block_id": "p0014-b0011",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 614.4744873046875,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0014-b0012",
+      "artifact_type": "page_number",
+      "text": "13",
+      "source_ref": {
+        "page_index": 13,
+        "block_id": "p0014-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0015-b0006",
+      "artifact_type": "page_number",
+      "text": "14",
+      "source_ref": {
+        "page_index": 14,
+        "block_id": "p0015-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0016-b0008",
+      "artifact_type": "page_number",
+      "text": "15",
+      "source_ref": {
+        "page_index": 15,
+        "block_id": "p0016-b0008",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0017-b0008",
+      "artifact_type": "page_number",
+      "text": "16",
+      "source_ref": {
+        "page_index": 16,
+        "block_id": "p0017-b0008",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0018-b0006",
+      "artifact_type": "page_number",
+      "text": "17",
+      "source_ref": {
+        "page_index": 17,
+        "block_id": "p0018-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0019-b0005",
+      "artifact_type": "page_number",
+      "text": "18",
+      "source_ref": {
+        "page_index": 18,
+        "block_id": "p0019-b0005",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0020-b0003",
+      "artifact_type": "page_number",
+      "text": "19",
+      "source_ref": {
+        "page_index": 19,
+        "block_id": "p0020-b0003",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0021-b0010",
+      "artifact_type": "page_number",
+      "text": "20",
+      "source_ref": {
+        "page_index": 20,
+        "block_id": "p0021-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0022-b0011",
+      "artifact_type": "page_number",
+      "text": "21",
+      "source_ref": {
+        "page_index": 21,
+        "block_id": "p0022-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0023-b0016",
+      "artifact_type": "page_number",
+      "text": "22",
+      "source_ref": {
+        "page_index": 22,
+        "block_id": "p0023-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0024-b0001",
+      "artifact_type": "header",
+      "text": "Test Yourself",
+      "source_ref": {
+        "page_index": 23,
+        "block_id": "p0024-b0001",
+        "bbox": {
+          "x0": 50.0,
+          "y0": 57.494842529296875,
+          "x1": 138.47451782226562,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-header-p0024-b0002",
+      "artifact_type": "header",
+      "text": "R Functions Used in This Chapter",
+      "source_ref": {
+        "page_index": 23,
+        "block_id": "p0024-b0002",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 761.7666015625,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0024-b0016",
+      "artifact_type": "page_number",
+      "text": "23",
+      "source_ref": {
+        "page_index": 23,
+        "block_id": "p0024-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0025-b0006",
+      "artifact_type": "page_number",
+      "text": "24",
+      "source_ref": {
+        "page_index": 24,
+        "block_id": "p0025-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0026-b0008",
+      "artifact_type": "page_number",
+      "text": "25",
+      "source_ref": {
+        "page_index": 25,
+        "block_id": "p0026-b0008",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0027-b0013",
+      "artifact_type": "page_number",
+      "text": "26",
+      "source_ref": {
+        "page_index": 26,
+        "block_id": "p0027-b0013",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0028-b0006",
+      "artifact_type": "page_number",
+      "text": "27",
+      "source_ref": {
+        "page_index": 27,
+        "block_id": "p0028-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0029-b0006",
+      "artifact_type": "page_number",
+      "text": "28",
+      "source_ref": {
+        "page_index": 28,
+        "block_id": "p0029-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0030-b0014",
+      "artifact_type": "page_number",
+      "text": "29",
+      "source_ref": {
+        "page_index": 29,
+        "block_id": "p0030-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0031-b0024",
+      "artifact_type": "page_number",
+      "text": "30",
+      "source_ref": {
+        "page_index": 30,
+        "block_id": "p0031-b0024",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0032-b0011",
+      "artifact_type": "page_number",
+      "text": "31",
+      "source_ref": {
+        "page_index": 31,
+        "block_id": "p0032-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0033-b0020",
+      "artifact_type": "page_number",
+      "text": "32",
+      "source_ref": {
+        "page_index": 32,
+        "block_id": "p0033-b0020",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0034-b0014",
+      "artifact_type": "page_number",
+      "text": "33",
+      "source_ref": {
+        "page_index": 33,
+        "block_id": "p0034-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0035-b0012",
+      "artifact_type": "page_number",
+      "text": "34",
+      "source_ref": {
+        "page_index": 34,
+        "block_id": "p0035-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0036-b0008",
+      "artifact_type": "page_number",
+      "text": "35",
+      "source_ref": {
+        "page_index": 35,
+        "block_id": "p0036-b0008",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0037-b0016",
+      "artifact_type": "page_number",
+      "text": "36",
+      "source_ref": {
+        "page_index": 36,
+        "block_id": "p0037-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0038-b0006",
+      "artifact_type": "page_number",
+      "text": "37",
+      "source_ref": {
+        "page_index": 37,
+        "block_id": "p0038-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0039-b0007",
+      "artifact_type": "page_number",
+      "text": "38",
+      "source_ref": {
+        "page_index": 38,
+        "block_id": "p0039-b0007",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0040-b0011",
+      "artifact_type": "page_number",
+      "text": "39",
+      "source_ref": {
+        "page_index": 39,
+        "block_id": "p0040-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0041-b0014",
+      "artifact_type": "page_number",
+      "text": "40",
+      "source_ref": {
+        "page_index": 40,
+        "block_id": "p0041-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0042-b0026",
+      "artifact_type": "page_number",
+      "text": "41",
+      "source_ref": {
+        "page_index": 41,
+        "block_id": "p0042-b0026",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0043-b0021",
+      "artifact_type": "page_number",
+      "text": "42",
+      "source_ref": {
+        "page_index": 42,
+        "block_id": "p0043-b0021",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0044-b0006",
+      "artifact_type": "header",
+      "text": "Histogram of USstatePops$V1",
+      "source_ref": {
+        "page_index": 43,
+        "block_id": "p0044-b0006",
+        "bbox": {
+          "x0": 669.7185668945312,
+          "y0": 75.10842895507812,
+          "x1": 852.7101440429688,
+          "y1": 89.31028747558594
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0044-b0012",
+      "artifact_type": "page_number",
+      "text": "43",
+      "source_ref": {
+        "page_index": 43,
+        "block_id": "p0044-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0045-b0006",
+      "artifact_type": "header",
+      "text": "Histogram of USstatePops$V1",
+      "source_ref": {
+        "page_index": 44,
+        "block_id": "p0045-b0006",
+        "bbox": {
+          "x0": 669.7185668945312,
+          "y0": 75.10842895507812,
+          "x1": 852.7101440429688,
+          "y1": 89.31028747558594
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0045-b0012",
+      "artifact_type": "page_number",
+      "text": "44",
+      "source_ref": {
+        "page_index": 44,
+        "block_id": "p0045-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0046-b0009",
+      "artifact_type": "page_number",
+      "text": "45",
+      "source_ref": {
+        "page_index": 45,
+        "block_id": "p0046-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0047-b0010",
+      "artifact_type": "page_number",
+      "text": "46",
+      "source_ref": {
+        "page_index": 46,
+        "block_id": "p0047-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0048-b0013",
+      "artifact_type": "page_number",
+      "text": "47",
+      "source_ref": {
+        "page_index": 47,
+        "block_id": "p0048-b0013",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0049-b0001",
+      "artifact_type": "header",
+      "text": "R Functions Used in This Chapter",
+      "source_ref": {
+        "page_index": 48,
+        "block_id": "p0049-b0001",
+        "bbox": {
+          "x0": 50.0,
+          "y0": 57.494842529296875,
+          "x1": 285.7666015625,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0049-b0015",
+      "artifact_type": "page_number",
+      "text": "48",
+      "source_ref": {
+        "page_index": 48,
+        "block_id": "p0049-b0015",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0050-b0006",
+      "artifact_type": "page_number",
+      "text": "49",
+      "source_ref": {
+        "page_index": 49,
+        "block_id": "p0050-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0051-b0009",
+      "artifact_type": "page_number",
+      "text": "50",
+      "source_ref": {
+        "page_index": 50,
+        "block_id": "p0051-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0052-b0013",
+      "artifact_type": "page_number",
+      "text": "51",
+      "source_ref": {
+        "page_index": 51,
+        "block_id": "p0052-b0013",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0053-b0014",
+      "artifact_type": "page_number",
+      "text": "52",
+      "source_ref": {
+        "page_index": 52,
+        "block_id": "p0053-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0054-b0011",
+      "artifact_type": "page_number",
+      "text": "53",
+      "source_ref": {
+        "page_index": 53,
+        "block_id": "p0054-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0055-b0016",
+      "artifact_type": "page_number",
+      "text": "54",
+      "source_ref": {
+        "page_index": 54,
+        "block_id": "p0055-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0056-b0019",
+      "artifact_type": "page_number",
+      "text": "55",
+      "source_ref": {
+        "page_index": 55,
+        "block_id": "p0056-b0019",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0057-b0016",
+      "artifact_type": "page_number",
+      "text": "56",
+      "source_ref": {
+        "page_index": 56,
+        "block_id": "p0057-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0058-b0014",
+      "artifact_type": "page_number",
+      "text": "57",
+      "source_ref": {
+        "page_index": 57,
+        "block_id": "p0058-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0059-b0024",
+      "artifact_type": "page_number",
+      "text": "58",
+      "source_ref": {
+        "page_index": 58,
+        "block_id": "p0059-b0024",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0060-b0003",
+      "artifact_type": "page_number",
+      "text": "59",
+      "source_ref": {
+        "page_index": 59,
+        "block_id": "p0060-b0003",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0061-b0006",
+      "artifact_type": "page_number",
+      "text": "60",
+      "source_ref": {
+        "page_index": 60,
+        "block_id": "p0061-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0062-b0017",
+      "artifact_type": "page_number",
+      "text": "61",
+      "source_ref": {
+        "page_index": 61,
+        "block_id": "p0062-b0017",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0063-b0009",
+      "artifact_type": "page_number",
+      "text": "62",
+      "source_ref": {
+        "page_index": 62,
+        "block_id": "p0063-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0064-b0010",
+      "artifact_type": "page_number",
+      "text": "63",
+      "source_ref": {
+        "page_index": 63,
+        "block_id": "p0064-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0065-b0011",
+      "artifact_type": "page_number",
+      "text": "64",
+      "source_ref": {
+        "page_index": 64,
+        "block_id": "p0065-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0066-b0006",
+      "artifact_type": "page_number",
+      "text": "65",
+      "source_ref": {
+        "page_index": 65,
+        "block_id": "p0066-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0067-b0007",
+      "artifact_type": "page_number",
+      "text": "66",
+      "source_ref": {
+        "page_index": 66,
+        "block_id": "p0067-b0007",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0068-b0005",
+      "artifact_type": "page_number",
+      "text": "67",
+      "source_ref": {
+        "page_index": 67,
+        "block_id": "p0068-b0005",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0069-b0017",
+      "artifact_type": "page_number",
+      "text": "68",
+      "source_ref": {
+        "page_index": 68,
+        "block_id": "p0069-b0017",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0070-b0025",
+      "artifact_type": "page_number",
+      "text": "69",
+      "source_ref": {
+        "page_index": 69,
+        "block_id": "p0070-b0025",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0071-b0021",
+      "artifact_type": "page_number",
+      "text": "70",
+      "source_ref": {
+        "page_index": 70,
+        "block_id": "p0071-b0021",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0072-b0024",
+      "artifact_type": "page_number",
+      "text": "71",
+      "source_ref": {
+        "page_index": 71,
+        "block_id": "p0072-b0024",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0073-b0009",
+      "artifact_type": "page_number",
+      "text": "72",
+      "source_ref": {
+        "page_index": 72,
+        "block_id": "p0073-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0074-b0017",
+      "artifact_type": "page_number",
+      "text": "73",
+      "source_ref": {
+        "page_index": 73,
+        "block_id": "p0074-b0017",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0075-b0017",
+      "artifact_type": "page_number",
+      "text": "74",
+      "source_ref": {
+        "page_index": 74,
+        "block_id": "p0075-b0017",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0076-b0011",
+      "artifact_type": "page_number",
+      "text": "75",
+      "source_ref": {
+        "page_index": 75,
+        "block_id": "p0076-b0011",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0077-b0006",
+      "artifact_type": "page_number",
+      "text": "76",
+      "source_ref": {
+        "page_index": 76,
+        "block_id": "p0077-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0078-b0012",
+      "artifact_type": "page_number",
+      "text": "77",
+      "source_ref": {
+        "page_index": 77,
+        "block_id": "p0078-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0079-b0016",
+      "artifact_type": "page_number",
+      "text": "78",
+      "source_ref": {
+        "page_index": 78,
+        "block_id": "p0079-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0080-b0014",
+      "artifact_type": "page_number",
+      "text": "79",
+      "source_ref": {
+        "page_index": 79,
+        "block_id": "p0080-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0081-b0020",
+      "artifact_type": "page_number",
+      "text": "80",
+      "source_ref": {
+        "page_index": 80,
+        "block_id": "p0081-b0020",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0082-b0014",
+      "artifact_type": "page_number",
+      "text": "81",
+      "source_ref": {
+        "page_index": 81,
+        "block_id": "p0082-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0083-b0017",
+      "artifact_type": "page_number",
+      "text": "82",
+      "source_ref": {
+        "page_index": 82,
+        "block_id": "p0083-b0017",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0084-b0016",
+      "artifact_type": "page_number",
+      "text": "83",
+      "source_ref": {
+        "page_index": 83,
+        "block_id": "p0084-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0085-b0009",
+      "artifact_type": "page_number",
+      "text": "84",
+      "source_ref": {
+        "page_index": 84,
+        "block_id": "p0085-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0086-b0012",
+      "artifact_type": "page_number",
+      "text": "85",
+      "source_ref": {
+        "page_index": 85,
+        "block_id": "p0086-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0087-b0015",
+      "artifact_type": "page_number",
+      "text": "86",
+      "source_ref": {
+        "page_index": 86,
+        "block_id": "p0087-b0015",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0088-b0013",
+      "artifact_type": "page_number",
+      "text": "87",
+      "source_ref": {
+        "page_index": 87,
+        "block_id": "p0088-b0013",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0089-b0006",
+      "artifact_type": "page_number",
+      "text": "88",
+      "source_ref": {
+        "page_index": 88,
+        "block_id": "p0089-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0090-b0012",
+      "artifact_type": "page_number",
+      "text": "89",
+      "source_ref": {
+        "page_index": 89,
+        "block_id": "p0090-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0091-b0014",
+      "artifact_type": "page_number",
+      "text": "90",
+      "source_ref": {
+        "page_index": 90,
+        "block_id": "p0091-b0014",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0092-b0010",
+      "artifact_type": "page_number",
+      "text": "91",
+      "source_ref": {
+        "page_index": 91,
+        "block_id": "p0092-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0093-b0005",
+      "artifact_type": "header",
+      "text": "Sources",
+      "source_ref": {
+        "page_index": 92,
+        "block_id": "p0093-b0005",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 579.3219604492188,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0093-b0016",
+      "artifact_type": "page_number",
+      "text": "92",
+      "source_ref": {
+        "page_index": 92,
+        "block_id": "p0093-b0016",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0094-b0045",
+      "artifact_type": "page_number",
+      "text": "93",
+      "source_ref": {
+        "page_index": 93,
+        "block_id": "p0094-b0045",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0095-b0009",
+      "artifact_type": "page_number",
+      "text": "94",
+      "source_ref": {
+        "page_index": 94,
+        "block_id": "p0095-b0009",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0096-b0006",
+      "artifact_type": "page_number",
+      "text": "95",
+      "source_ref": {
+        "page_index": 95,
+        "block_id": "p0096-b0006",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0097-b0012",
+      "artifact_type": "page_number",
+      "text": "96",
+      "source_ref": {
+        "page_index": 96,
+        "block_id": "p0097-b0012",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0098-b0010",
+      "artifact_type": "page_number",
+      "text": "97",
+      "source_ref": {
+        "page_index": 97,
+        "block_id": "p0098-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0099-b0002",
+      "artifact_type": "page_number",
+      "text": "98",
+      "source_ref": {
+        "page_index": 98,
+        "block_id": "p0099-b0002",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0100-b0010",
+      "artifact_type": "page_number",
+      "text": "99",
+      "source_ref": {
+        "page_index": 99,
+        "block_id": "p0100-b0010",
+        "bbox": {
+          "x0": 505.0,
+          "y0": 723.59521484375,
+          "x1": 519.0,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0101-b0009",
+      "artifact_type": "page_number",
+      "text": "100",
+      "source_ref": {
+        "page_index": 100,
+        "block_id": "p0101-b0009",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0102-b0012",
+      "artifact_type": "page_number",
+      "text": "101",
+      "source_ref": {
+        "page_index": 101,
+        "block_id": "p0102-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0103-b0016",
+      "artifact_type": "page_number",
+      "text": "102",
+      "source_ref": {
+        "page_index": 102,
+        "block_id": "p0103-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0104-b0020",
+      "artifact_type": "page_number",
+      "text": "103",
+      "source_ref": {
+        "page_index": 103,
+        "block_id": "p0104-b0020",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0105-b0028",
+      "artifact_type": "page_number",
+      "text": "104",
+      "source_ref": {
+        "page_index": 104,
+        "block_id": "p0105-b0028",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0106-b0012",
+      "artifact_type": "page_number",
+      "text": "105",
+      "source_ref": {
+        "page_index": 105,
+        "block_id": "p0106-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0107-b0014",
+      "artifact_type": "page_number",
+      "text": "106",
+      "source_ref": {
+        "page_index": 106,
+        "block_id": "p0107-b0014",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0108-b0012",
+      "artifact_type": "page_number",
+      "text": "107",
+      "source_ref": {
+        "page_index": 107,
+        "block_id": "p0108-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0109-b0028",
+      "artifact_type": "page_number",
+      "text": "108",
+      "source_ref": {
+        "page_index": 108,
+        "block_id": "p0109-b0028",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0110-b0021",
+      "artifact_type": "page_number",
+      "text": "109",
+      "source_ref": {
+        "page_index": 109,
+        "block_id": "p0110-b0021",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0111-b0006",
+      "artifact_type": "page_number",
+      "text": "110",
+      "source_ref": {
+        "page_index": 110,
+        "block_id": "p0111-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0112-b0008",
+      "artifact_type": "page_number",
+      "text": "111",
+      "source_ref": {
+        "page_index": 111,
+        "block_id": "p0112-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0113-b0010",
+      "artifact_type": "page_number",
+      "text": "112",
+      "source_ref": {
+        "page_index": 112,
+        "block_id": "p0113-b0010",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0114-b0014",
+      "artifact_type": "page_number",
+      "text": "113",
+      "source_ref": {
+        "page_index": 113,
+        "block_id": "p0114-b0014",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0115-b0022",
+      "artifact_type": "page_number",
+      "text": "114",
+      "source_ref": {
+        "page_index": 114,
+        "block_id": "p0115-b0022",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0116-b0016",
+      "artifact_type": "page_number",
+      "text": "115",
+      "source_ref": {
+        "page_index": 115,
+        "block_id": "p0116-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0117-b0024",
+      "artifact_type": "page_number",
+      "text": "116",
+      "source_ref": {
+        "page_index": 116,
+        "block_id": "p0117-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0118-b0016",
+      "artifact_type": "page_number",
+      "text": "117",
+      "source_ref": {
+        "page_index": 117,
+        "block_id": "p0118-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0119-b0011",
+      "artifact_type": "page_number",
+      "text": "118",
+      "source_ref": {
+        "page_index": 118,
+        "block_id": "p0119-b0011",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0120-b0027",
+      "artifact_type": "page_number",
+      "text": "119",
+      "source_ref": {
+        "page_index": 119,
+        "block_id": "p0120-b0027",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0121-b0014",
+      "artifact_type": "page_number",
+      "text": "120",
+      "source_ref": {
+        "page_index": 120,
+        "block_id": "p0121-b0014",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0122-b0024",
+      "artifact_type": "page_number",
+      "text": "121",
+      "source_ref": {
+        "page_index": 121,
+        "block_id": "p0122-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0123-b0023",
+      "artifact_type": "page_number",
+      "text": "122",
+      "source_ref": {
+        "page_index": 122,
+        "block_id": "p0123-b0023",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0124-b0029",
+      "artifact_type": "page_number",
+      "text": "123",
+      "source_ref": {
+        "page_index": 123,
+        "block_id": "p0124-b0029",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0125-b0015",
+      "artifact_type": "page_number",
+      "text": "124",
+      "source_ref": {
+        "page_index": 124,
+        "block_id": "p0125-b0015",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0126-b0024",
+      "artifact_type": "page_number",
+      "text": "125",
+      "source_ref": {
+        "page_index": 125,
+        "block_id": "p0126-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0127-b0006",
+      "artifact_type": "page_number",
+      "text": "126",
+      "source_ref": {
+        "page_index": 126,
+        "block_id": "p0127-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0128-b0007",
+      "artifact_type": "page_number",
+      "text": "127",
+      "source_ref": {
+        "page_index": 127,
+        "block_id": "p0128-b0007",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0129-b0014",
+      "artifact_type": "page_number",
+      "text": "128",
+      "source_ref": {
+        "page_index": 128,
+        "block_id": "p0129-b0014",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0130-b0012",
+      "artifact_type": "page_number",
+      "text": "129",
+      "source_ref": {
+        "page_index": 129,
+        "block_id": "p0130-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0131-b0010",
+      "artifact_type": "page_number",
+      "text": "130",
+      "source_ref": {
+        "page_index": 130,
+        "block_id": "p0131-b0010",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0132-b0010",
+      "artifact_type": "page_number",
+      "text": "131",
+      "source_ref": {
+        "page_index": 131,
+        "block_id": "p0132-b0010",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0133-b0010",
+      "artifact_type": "page_number",
+      "text": "132",
+      "source_ref": {
+        "page_index": 132,
+        "block_id": "p0133-b0010",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0134-b0028",
+      "artifact_type": "page_number",
+      "text": "133",
+      "source_ref": {
+        "page_index": 133,
+        "block_id": "p0134-b0028",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0135-b0006",
+      "artifact_type": "page_number",
+      "text": "134",
+      "source_ref": {
+        "page_index": 134,
+        "block_id": "p0135-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0136-b0006",
+      "artifact_type": "page_number",
+      "text": "135",
+      "source_ref": {
+        "page_index": 135,
+        "block_id": "p0136-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0137-b0009",
+      "artifact_type": "page_number",
+      "text": "136",
+      "source_ref": {
+        "page_index": 136,
+        "block_id": "p0137-b0009",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0138-b0012",
+      "artifact_type": "page_number",
+      "text": "137",
+      "source_ref": {
+        "page_index": 137,
+        "block_id": "p0138-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0139-b0019",
+      "artifact_type": "page_number",
+      "text": "138",
+      "source_ref": {
+        "page_index": 138,
+        "block_id": "p0139-b0019",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0140-b0018",
+      "artifact_type": "page_number",
+      "text": "139",
+      "source_ref": {
+        "page_index": 139,
+        "block_id": "p0140-b0018",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0141-b0018",
+      "artifact_type": "page_number",
+      "text": "140",
+      "source_ref": {
+        "page_index": 140,
+        "block_id": "p0141-b0018",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0142-b0024",
+      "artifact_type": "page_number",
+      "text": "141",
+      "source_ref": {
+        "page_index": 141,
+        "block_id": "p0142-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0143-b0013",
+      "artifact_type": "page_number",
+      "text": "142",
+      "source_ref": {
+        "page_index": 142,
+        "block_id": "p0143-b0013",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0144-b0013",
+      "artifact_type": "page_number",
+      "text": "143",
+      "source_ref": {
+        "page_index": 143,
+        "block_id": "p0144-b0013",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0145-b0024",
+      "artifact_type": "page_number",
+      "text": "144",
+      "source_ref": {
+        "page_index": 144,
+        "block_id": "p0145-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0146-b0009",
+      "artifact_type": "page_number",
+      "text": "145",
+      "source_ref": {
+        "page_index": 145,
+        "block_id": "p0146-b0009",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0147-b0015",
+      "artifact_type": "page_number",
+      "text": "146",
+      "source_ref": {
+        "page_index": 146,
+        "block_id": "p0147-b0015",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0148-b0015",
+      "artifact_type": "page_number",
+      "text": "147",
+      "source_ref": {
+        "page_index": 147,
+        "block_id": "p0148-b0015",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0149-b0005",
+      "artifact_type": "header",
+      "text": "Chapter Challenge",
+      "source_ref": {
+        "page_index": 148,
+        "block_id": "p0149-b0005",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 654.72998046875,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0149-b0017",
+      "artifact_type": "page_number",
+      "text": "148",
+      "source_ref": {
+        "page_index": 148,
+        "block_id": "p0149-b0017",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0150-b0014",
+      "artifact_type": "page_number",
+      "text": "149",
+      "source_ref": {
+        "page_index": 149,
+        "block_id": "p0150-b0014",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0151-b0006",
+      "artifact_type": "page_number",
+      "text": "150",
+      "source_ref": {
+        "page_index": 150,
+        "block_id": "p0151-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0152-b0008",
+      "artifact_type": "page_number",
+      "text": "151",
+      "source_ref": {
+        "page_index": 151,
+        "block_id": "p0152-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0153-b0020",
+      "artifact_type": "page_number",
+      "text": "152",
+      "source_ref": {
+        "page_index": 152,
+        "block_id": "p0153-b0020",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0154-b0012",
+      "artifact_type": "page_number",
+      "text": "153",
+      "source_ref": {
+        "page_index": 153,
+        "block_id": "p0154-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0155-b0016",
+      "artifact_type": "page_number",
+      "text": "154",
+      "source_ref": {
+        "page_index": 154,
+        "block_id": "p0155-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0156-b0018",
+      "artifact_type": "page_number",
+      "text": "155",
+      "source_ref": {
+        "page_index": 155,
+        "block_id": "p0156-b0018",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0157-b0024",
+      "artifact_type": "page_number",
+      "text": "156",
+      "source_ref": {
+        "page_index": 156,
+        "block_id": "p0157-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0158-b0019",
+      "artifact_type": "page_number",
+      "text": "157",
+      "source_ref": {
+        "page_index": 157,
+        "block_id": "p0158-b0019",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0159-b0022",
+      "artifact_type": "page_number",
+      "text": "158",
+      "source_ref": {
+        "page_index": 158,
+        "block_id": "p0159-b0022",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0160-b0012",
+      "artifact_type": "page_number",
+      "text": "159",
+      "source_ref": {
+        "page_index": 159,
+        "block_id": "p0160-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0161-b0012",
+      "artifact_type": "page_number",
+      "text": "160",
+      "source_ref": {
+        "page_index": 160,
+        "block_id": "p0161-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0162-b0012",
+      "artifact_type": "header",
+      "text": "Sources",
+      "source_ref": {
+        "page_index": 161,
+        "block_id": "p0162-b0012",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 579.3219604492188,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0162-b0019",
+      "artifact_type": "page_number",
+      "text": "161",
+      "source_ref": {
+        "page_index": 161,
+        "block_id": "p0162-b0019",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0163-b0006",
+      "artifact_type": "page_number",
+      "text": "162",
+      "source_ref": {
+        "page_index": 162,
+        "block_id": "p0163-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0164-b0008",
+      "artifact_type": "page_number",
+      "text": "163",
+      "source_ref": {
+        "page_index": 163,
+        "block_id": "p0164-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0165-b0011",
+      "artifact_type": "page_number",
+      "text": "164",
+      "source_ref": {
+        "page_index": 164,
+        "block_id": "p0165-b0011",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0166-b0016",
+      "artifact_type": "page_number",
+      "text": "165",
+      "source_ref": {
+        "page_index": 165,
+        "block_id": "p0166-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0167-b0022",
+      "artifact_type": "page_number",
+      "text": "166",
+      "source_ref": {
+        "page_index": 166,
+        "block_id": "p0167-b0022",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0168-b0008",
+      "artifact_type": "page_number",
+      "text": "167",
+      "source_ref": {
+        "page_index": 167,
+        "block_id": "p0168-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0169-b0023",
+      "artifact_type": "page_number",
+      "text": "168",
+      "source_ref": {
+        "page_index": 168,
+        "block_id": "p0169-b0023",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0170-b0010",
+      "artifact_type": "page_number",
+      "text": "169",
+      "source_ref": {
+        "page_index": 169,
+        "block_id": "p0170-b0010",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0171-b0005",
+      "artifact_type": "header",
+      "text": "Chapter Challenge",
+      "source_ref": {
+        "page_index": 170,
+        "block_id": "p0171-b0005",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 654.72998046875,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0171-b0019",
+      "artifact_type": "page_number",
+      "text": "170",
+      "source_ref": {
+        "page_index": 170,
+        "block_id": "p0171-b0019",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0172-b0002",
+      "artifact_type": "page_number",
+      "text": "171",
+      "source_ref": {
+        "page_index": 171,
+        "block_id": "p0172-b0002",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0173-b0006",
+      "artifact_type": "page_number",
+      "text": "172",
+      "source_ref": {
+        "page_index": 172,
+        "block_id": "p0173-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0174-b0008",
+      "artifact_type": "page_number",
+      "text": "173",
+      "source_ref": {
+        "page_index": 173,
+        "block_id": "p0174-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0175-b0008",
+      "artifact_type": "page_number",
+      "text": "174",
+      "source_ref": {
+        "page_index": 174,
+        "block_id": "p0175-b0008",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0176-b0025",
+      "artifact_type": "page_number",
+      "text": "175",
+      "source_ref": {
+        "page_index": 175,
+        "block_id": "p0176-b0025",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0177-b0012",
+      "artifact_type": "page_number",
+      "text": "176",
+      "source_ref": {
+        "page_index": 176,
+        "block_id": "p0177-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0178-b0007",
+      "artifact_type": "page_number",
+      "text": "177",
+      "source_ref": {
+        "page_index": 177,
+        "block_id": "p0178-b0007",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0179-b0027",
+      "artifact_type": "page_number",
+      "text": "178",
+      "source_ref": {
+        "page_index": 178,
+        "block_id": "p0179-b0027",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0180-b0024",
+      "artifact_type": "page_number",
+      "text": "179",
+      "source_ref": {
+        "page_index": 179,
+        "block_id": "p0180-b0024",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0181-b0037",
+      "artifact_type": "page_number",
+      "text": "180",
+      "source_ref": {
+        "page_index": 180,
+        "block_id": "p0181-b0037",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0182-b0012",
+      "artifact_type": "page_number",
+      "text": "181",
+      "source_ref": {
+        "page_index": 181,
+        "block_id": "p0182-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0183-b0030",
+      "artifact_type": "page_number",
+      "text": "182",
+      "source_ref": {
+        "page_index": 182,
+        "block_id": "p0183-b0030",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0184-b0007",
+      "artifact_type": "header",
+      "text": "Sources",
+      "source_ref": {
+        "page_index": 183,
+        "block_id": "p0184-b0007",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 579.3219604492188,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0184-b0019",
+      "artifact_type": "page_number",
+      "text": "183",
+      "source_ref": {
+        "page_index": 183,
+        "block_id": "p0184-b0019",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0185-b0004",
+      "artifact_type": "page_number",
+      "text": "184",
+      "source_ref": {
+        "page_index": 184,
+        "block_id": "p0185-b0004",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0186-b0006",
+      "artifact_type": "page_number",
+      "text": "185",
+      "source_ref": {
+        "page_index": 185,
+        "block_id": "p0186-b0006",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0187-b0009",
+      "artifact_type": "page_number",
+      "text": "186",
+      "source_ref": {
+        "page_index": 186,
+        "block_id": "p0187-b0009",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0188-b0028",
+      "artifact_type": "page_number",
+      "text": "187",
+      "source_ref": {
+        "page_index": 187,
+        "block_id": "p0188-b0028",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0189-b0023",
+      "artifact_type": "page_number",
+      "text": "188",
+      "source_ref": {
+        "page_index": 188,
+        "block_id": "p0189-b0023",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0190-b0012",
+      "artifact_type": "page_number",
+      "text": "189",
+      "source_ref": {
+        "page_index": 189,
+        "block_id": "p0190-b0012",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0191-b0013",
+      "artifact_type": "page_number",
+      "text": "190",
+      "source_ref": {
+        "page_index": 190,
+        "block_id": "p0191-b0013",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0192-b0011",
+      "artifact_type": "page_number",
+      "text": "191",
+      "source_ref": {
+        "page_index": 191,
+        "block_id": "p0192-b0011",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0193-b0016",
+      "artifact_type": "page_number",
+      "text": "192",
+      "source_ref": {
+        "page_index": 192,
+        "block_id": "p0193-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0194-b0022",
+      "artifact_type": "page_number",
+      "text": "193",
+      "source_ref": {
+        "page_index": 193,
+        "block_id": "p0194-b0022",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-page-number-p0195-b0016",
+      "artifact_type": "page_number",
+      "text": "194",
+      "source_ref": {
+        "page_index": 194,
+        "block_id": "p0195-b0016",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
+      "artifact_id": "a-header-p0196-b0006",
+      "artifact_type": "header",
+      "text": "Sources",
+      "source_ref": {
+        "page_index": 195,
+        "block_id": "p0196-b0006",
+        "bbox": {
+          "x0": 526.0,
+          "y0": 57.494842529296875,
+          "x1": 579.3219604492188,
+          "y1": 73.99484252929688
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Repeated top margin text appears on multiple pages.",
+      "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0196-b0013",
+      "artifact_type": "page_number",
+      "text": "195",
+      "source_ref": {
+        "page_index": 195,
+        "block_id": "p0196-b0013",
+        "bbox": {
+          "x0": 501.5,
+          "y0": 723.59521484375,
+          "x1": 522.5,
+          "y1": 738.9951782226562
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Numeric margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    }
+  ],
+  "reading_order_warnings": [],
+  "unsupported_feature_warnings": [
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 3 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 2
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 4 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 3
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 9 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 8
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 18 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 17
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 20 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 19
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 21 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 20
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 25 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 24
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 28 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 27
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 50 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 49
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 61 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 60
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 66 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 65
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 68 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 67
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 73 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 72
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 77 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 76
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 79 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 78
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 85 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 84
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 88 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 87
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 91 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 90
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 92 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 91
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 98 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 97
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 100 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 99
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 101 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 100
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 102 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 101
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 107 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 106
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 113 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 112
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 114 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 113
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 119 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 118
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 127 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 126
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 133 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 132
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 137 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 136
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 153 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 152
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 154 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 153
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 154 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 153
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 161 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 160
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 164 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 163
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 168 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 167
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 173 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 172
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 178 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 177
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 182 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 181
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 186 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 185
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 192 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 191
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 193 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 192
+    }
+  ],
+  "warnings": [
+    {
+      "code": "table_fallback_used",
+      "message": "Possible table-like text was preserved as a preformatted fallback; full table reconstruction is not implemented.",
+      "severity": "warning",
+      "page_index": 19
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible table-like text was preserved as a preformatted fallback; full table reconstruction is not implemented.",
+      "severity": "warning",
+      "page_index": 155
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 3 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 2
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 4 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 3
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 9 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 8
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 14 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 18 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 17
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 20 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 19
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 21 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 20
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 24 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 25 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 24
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 28 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 27
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 36 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 35
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 48 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 47
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 50 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 49
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 61 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 60
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 66 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 65
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 68 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 67
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 73 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 72
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 76 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 75
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 77 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 76
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 79 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 78
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 85 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 84
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 88 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 87
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 91 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 90
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 92 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 91
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 98 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 97
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 99 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 98
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 100 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 99
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 101 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 100
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 102 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 101
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 107 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 106
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 113 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 112
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 114 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 113
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 119 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 118
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 127 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 126
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 133 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 132
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 137 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 136
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 153 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 152
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 154 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 153
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 154 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 153
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 161 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 160
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 164 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 163
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 168 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 167
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 173 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 172
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 178 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 177
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 182 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 181
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 186 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 185
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 192 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 191
+    },
+    {
+      "code": "image_not_preserved",
+      "message": "Image on page 193 was not preserved. Image uses a mask or transparency that is not preserved in this MVP slice.",
+      "severity": "warning",
+      "page_index": 192
+    }
+  ],
+  "dependency_notes": [
+    "PyMuPDF used for native text extraction.",
+    "EbookLib used for basic EPUB writing.",
+    "EPUBCheck is optional and not run during conversion."
+  ],
+  "validation": {
+    "epubcheck": "not_run"
+  }
+}
