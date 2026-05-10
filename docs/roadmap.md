@@ -41,7 +41,7 @@ MVP 1 intentionally does not implement OCR, complex table reconstruction, hosted
 - [x] Warn with image counts and source pages when images cannot be preserved.
 - [x] Detect obvious table-like blocks.
 - [x] Render simple text tables or use a safe fallback.
-- [ ] Add debug artifacts for removed content and ordered blocks.
+- [x] Add debug artifacts for removed content and ordered blocks.
 
 ## Future - Better layout recovery
 

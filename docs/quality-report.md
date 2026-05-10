@@ -4,6 +4,8 @@ The quality report is a first-class feature.
 
 A user should know whether the EPUB is trustworthy before reading 300 pages. MVP 1 writes the report as JSON when `convert --report` is passed.
 
+For developer inspection, `convert --debug-dir` also writes separate debug JSON files for removed artifacts, ordered blocks, kept margin blocks, and table fallbacks.
+
 ## Report goals
 
 The report answers:
@@ -107,3 +109,13 @@ MVP 1 uses a simple explainable score starting at 100 and subtracting for:
 - zero extracted text
 
 The score is not a promise of perfect conversion. It is a compact risk signal backed by the detailed warnings and action counts.
+
+## Debug JSON
+
+`convert --debug-dir debug` writes:
+- `removed-artifacts.json`: removed page numbers, headers, and footers with page, bbox, text, reason, confidence, and source engine.
+- `ordered-blocks.json`: text blocks after page artifact cleanup and reading-order resolution.
+- `kept-margin-blocks.json`: margin-area blocks that were kept for manual inspection.
+- `table-fallbacks.json`: table fallback elements when detected, including source refs, text, confidence, and warnings.
+
+These files are diagnostic artifacts, not a replacement for the user-facing quality report.

@@ -37,6 +37,7 @@ python -m pdf2epub_recovery --help
 python -m pdf2epub_recovery profile input.pdf --out profile.json
 python -m pdf2epub_recovery extract input.pdf --out debug-extraction.json
 python -m pdf2epub_recovery convert input.pdf --out book.epub --report book.report.json
+python -m pdf2epub_recovery convert input.pdf --out book.epub --debug-dir debug
 ```
 
 The installed console script may also work when it is on your `PATH`:
@@ -62,6 +63,7 @@ MVP 1 is implemented:
 - simple reading order and paragraph reconstruction
 - basic EPUB output with simple embedded image preservation
 - obvious text-table detection with readable EPUB fallback
+- debug JSON for removed artifacts, ordered blocks, kept margin blocks, and table fallbacks
 - JSON quality report
 - local web UI with progress log, drag-and-drop upload, and explained options
 

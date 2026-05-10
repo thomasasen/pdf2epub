@@ -141,6 +141,14 @@ pdf2epub-recovery convert input.pdf --out book.epub --no-dehyphenate
 pdf2epub-recovery convert input.pdf --out book.epub --max-pages 25
 ```
 
+`--debug-dir` writes inspection JSON for conversion decisions:
+- `profile.json`
+- `document-ir.json`
+- `removed-artifacts.json`
+- `ordered-blocks.json`
+- `kept-margin-blocks.json`
+- `table-fallbacks.json` when table fallback elements exist
+
 ## Local web interface
 
 Start the browser UI with:

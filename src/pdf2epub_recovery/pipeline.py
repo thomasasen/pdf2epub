@@ -17,6 +17,7 @@ from pdf2epub_recovery.model import (
     PdfProfile,
     QualityReport,
     QualityWarning,
+    RawTextBlock,
     RemovedArtifact,
     ReportActions,
 )
@@ -32,6 +33,8 @@ class ConversionResult:
     profile: PdfProfile
     ir: DocumentIR
     report: QualityReport
+    ordered_blocks: list[RawTextBlock]
+    keep_artifacts: bool = False
 
 
 ProgressCallback = Callable[[int, str], None]
@@ -118,7 +121,13 @@ def convert_pdf_to_epub(
         warnings=all_warnings,
     )
     _progress(progress_callback, 100, "Done.")
-    return ConversionResult(profile=profile, ir=ir, report=report)
+    return ConversionResult(
+        profile=profile,
+        ir=ir,
+        report=report,
+        ordered_blocks=ordered.blocks,
+        keep_artifacts=keep_artifacts,
+    )
 
 
 class ConversionError(RuntimeError):

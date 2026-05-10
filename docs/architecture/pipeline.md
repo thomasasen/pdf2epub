@@ -34,6 +34,7 @@ native-text PDF
 -> DocumentIR
 -> EbookLib EPUB
 -> JSON quality report
+-> optional debug JSON
 ```
 
 MVP 1 prefers warnings and preserved text over aggressive cleanup. It does not run OCR, reconstruct complex tables, or solve multi-column reading order. Simple extractable PNG, JPEG, and GIF images are preserved; unsupported image cases are reported. Obvious text-table blocks are preserved with a readable fallback.
@@ -137,6 +138,18 @@ Purpose:
 MVP implementation:
 - `validation/epubcheck.py`
 - `validate` returns a clear message if `epubcheck` is missing from `PATH`
+
+### 9. Debug artifacts
+
+Purpose:
+- inspect conversion decisions without changing EPUB output
+- show removed page artifacts, reading-order-resolved kept blocks, kept margin blocks, and table fallbacks
+- keep debug JSON deterministic and avoid dumping binary image bytes
+
+MVP implementation:
+- `debug.py`
+- `convert --debug-dir` writes `profile.json`, `document-ir.json`, `removed-artifacts.json`, `ordered-blocks.json`, and `kept-margin-blocks.json`
+- `table-fallbacks.json` is written when table fallback elements exist
 
 ## Early design choice
 

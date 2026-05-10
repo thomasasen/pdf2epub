@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from pdf2epub_recovery import __version__
+from pdf2epub_recovery.debug import build_debug_payloads
 from pdf2epub_recovery.extraction.pymupdf_extractor import PyMuPDFExtractor
 from pdf2epub_recovery.model import QualityReport, QualityWarning, ReportActions
 from pdf2epub_recovery.pipeline import ConversionError, convert_pdf_to_epub
@@ -140,6 +141,8 @@ def _handle_convert(args: argparse.Namespace) -> int:
         args.debug_dir.mkdir(parents=True, exist_ok=True)
         _write_json(args.debug_dir / "profile.json", result.profile.to_dict())
         _write_json(args.debug_dir / "document-ir.json", result.ir.to_dict())
+        for file_name, payload in build_debug_payloads(result).items():
+            _write_json(args.debug_dir / file_name, payload)
         print(f"Wrote debug JSON: {args.debug_dir}")
 
     print(f"Wrote EPUB: {args.out}")
