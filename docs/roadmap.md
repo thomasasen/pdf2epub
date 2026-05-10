@@ -45,8 +45,8 @@ MVP 1 intentionally does not implement OCR, complex table reconstruction, hosted
 
 ## Future - Better layout recovery
 
-- [ ] Stronger multi-column detection.
-- [ ] Column-aware reading order.
+- [x] Stronger multi-column detection.
+- [x] Column-aware reading order.
 - [ ] Heading detection.
 - [ ] Footnote detection.
 - [ ] Paragraph reconstruction confidence per page.

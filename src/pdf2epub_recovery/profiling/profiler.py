@@ -216,6 +216,12 @@ def _is_text_block(block: tuple[object, ...]) -> bool:
 
 def _estimate_page_layout(blocks: list[tuple[object, ...]], page_width: float) -> LayoutEstimate:
     text_blocks = [block for block in blocks if _is_text_block(block)]
+    if not text_blocks:
+        return "unknown"
+
+    if _has_clear_column_split(text_blocks, page_width):
+        return "possible_multi_column"
+
     if len(text_blocks) < 4:
         return "one_column" if text_blocks else "unknown"
 
@@ -227,6 +233,37 @@ def _estimate_page_layout(blocks: list[tuple[object, ...]], page_width: float) -
     if left >= 2 and right >= 2 and middle == 0:
         return "possible_multi_column"
     return "one_column"
+
+
+def _has_clear_column_split(blocks: list[tuple[object, ...]], page_width: float) -> bool:
+    left_blocks = [block for block in blocks if _block_center_ratio(block, page_width) < 0.45]
+    right_blocks = [block for block in blocks if _block_center_ratio(block, page_width) > 0.55]
+    if not left_blocks or not right_blocks:
+        return False
+
+    left_edge = max(float(block[2]) for block in left_blocks)
+    right_edge = min(float(block[0]) for block in right_blocks)
+    if right_edge - left_edge < max(24.0, page_width * 0.08):
+        return False
+
+    if any(_block_width(block) > page_width * 0.62 for block in [*left_blocks, *right_blocks]):
+        return False
+
+    return any(
+        _vertical_overlap(left, right) >= 8.0 for left in left_blocks for right in right_blocks
+    )
+
+
+def _block_center_ratio(block: tuple[object, ...], page_width: float) -> float:
+    return ((float(block[0]) + float(block[2])) / 2.0) / page_width
+
+
+def _block_width(block: tuple[object, ...]) -> float:
+    return max(0.0, float(block[2]) - float(block[0]))
+
+
+def _vertical_overlap(left: tuple[object, ...], right: tuple[object, ...]) -> float:
+    return max(0.0, min(float(left[3]), float(right[3])) - max(float(left[1]), float(right[1])))
 
 
 def _combine_layouts(layouts: list[LayoutEstimate]) -> LayoutEstimate:

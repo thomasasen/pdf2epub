@@ -60,7 +60,7 @@ python -m ruff check .
 MVP 1 is implemented:
 - native-text PDF profiling and extraction
 - conservative page artifact removal
-- simple reading order and paragraph reconstruction
+- simple reading order, conservative clear two-column fallback, and paragraph reconstruction
 - basic EPUB output with simple embedded image preservation
 - obvious text-table detection with readable EPUB fallback
 - debug JSON for removed artifacts, ordered blocks, kept margin blocks, and table fallbacks
@@ -71,4 +71,4 @@ Still intentionally unsupported:
 - OCR for scanned PDFs
 - complex table reconstruction beyond simple text-table fallback
 - masked, transparent, or unusual image preservation cases
-- reliable multi-column reading order
+- reliable reading order for complex multi-column layouts

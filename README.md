@@ -47,6 +47,7 @@ Implemented MVP 1 scope:
 - Real PDF profiling with PyMuPDF.
 - Native text block extraction with geometry and provenance.
 - Conservative removal of repeated page numbers, headers, and footers.
+- Page number cleanup supports simple English and German page labels in margins.
 - Simple one-column reading order.
 - Basic paragraph reconstruction and conservative dehyphenation.
 - Basic reflowable EPUB output with EbookLib.
@@ -54,6 +55,7 @@ Implemented MVP 1 scope:
 - Simple embedded image preservation in EPUB output.
 - Image preservation counts and unsupported-image warnings in reports.
 - Obvious text-table detection with preformatted EPUB fallback.
+- Conservative column-aware reading order for clearly separated two-column pages.
 - JSON quality reports.
 - CLI-first, local/offline workflow.
 - Simple local web interface with progress and conversion log.
@@ -71,7 +73,7 @@ Known limitations:
 - Image-only/scanned pages are reported, not recovered.
 - Complex tables are not reconstructed; simple text tables use a readable fallback.
 - Masked, transparent, transformed, or unusual image encodings may be reported but not preserved.
-- Multi-column documents may warn and can have imperfect reading order.
+- Clear two-column pages use a conservative column-aware fallback, but complex multi-column documents may still warn and can have imperfect reading order.
 - EPUBCheck validation is optional and only runs if an `epubcheck` executable is configured on `PATH`.
 
 ## Why this project exists
@@ -85,7 +87,7 @@ PDF
 -> profile
 -> extract blocks with geometry
 -> remove safe page artifacts
--> resolve reading order
+-> resolve reading order, including conservative clear two-column fallback
 -> rebuild paragraphs
 -> preserve simple images or report unsupported cases
 -> preserve obvious text tables as fallback blocks

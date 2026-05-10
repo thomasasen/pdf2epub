@@ -28,7 +28,7 @@ native-text PDF
 -> PyMuPDF profile
 -> PyMuPDF text and simple image extraction
 -> safe page artifact removal
--> simple reading order
+-> simple reading order with conservative clear two-column fallback
 -> simple table-like block detection
 -> simple paragraph reconstruction
 -> DocumentIR
@@ -73,7 +73,7 @@ Purpose:
 
 MVP implementation:
 - `cleaning/page_artifacts.py`
-- removes only sequence-like numeric page numbers and repeated top/bottom margin text
+- removes only sequence-like page numbers, simple English/German page labels, and repeated top/bottom margin text
 - `--keep-artifacts` bypasses removal
 
 ### 4. Reading order
@@ -81,11 +81,13 @@ MVP implementation:
 Purpose:
 - turn positioned PDF blocks into natural reading order
 - support one-column first
+- use conservative column-aware ordering when two columns are clearly separated
 - report multi-column uncertainty
 
 MVP implementation:
 - `reading_order/resolver.py`
-- sorts by page, y, x
+- sorts one-column pages by page, y, x
+- orders clearly separated two-column pages left column before right column
 - emits `possible_multi_column_reading_order_uncertain` when the profile suspects columns
 
 ### 5. Structure

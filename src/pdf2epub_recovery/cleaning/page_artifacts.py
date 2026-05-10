@@ -8,7 +8,10 @@ from dataclasses import dataclass
 
 from pdf2epub_recovery.model import RawTextBlock, RemovedArtifact
 
-_PAGE_NUMBER_RE = re.compile(r"^(?:page\s*)?(\d{1,5})$", re.IGNORECASE)
+_PAGE_NUMBER_RE = re.compile(
+    r"^(?:(?:page|seite|p\.|s\.)\s*)?(\d{1,5})(?:\s*(?:of|von|/)\s*\d{1,5})?$",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -46,9 +49,9 @@ def _detect_page_numbers(blocks: list[RawTextBlock]) -> list[RemovedArtifact]:
     numeric_candidates: list[tuple[RawTextBlock, int]] = []
     for block in blocks:
         text = _single_line(block.raw_text)
-        match = _PAGE_NUMBER_RE.match(text)
-        if match and _in_margin(block):
-            numeric_candidates.append((block, int(match.group(1))))
+        page_number = _page_number_from_text(text)
+        if page_number is not None and _in_margin(block):
+            numeric_candidates.append((block, page_number))
 
     if len(numeric_candidates) < 2:
         return []
@@ -72,7 +75,7 @@ def _detect_page_numbers(blocks: list[RawTextBlock]) -> list[RemovedArtifact]:
             artifact_type="page_number",
             text=_single_line(block.raw_text),
             source_ref=block.source_ref(),
-            reason="Numeric margin text follows a repeated page-number sequence.",
+            reason="Margin text follows a repeated page-number sequence.",
             confidence=0.95,
         )
         for block, _number in numeric_candidates
@@ -86,7 +89,7 @@ def _detect_repeated_margin_text(blocks: list[RawTextBlock]) -> list[RemovedArti
         if zone is None:
             continue
         text = _single_line(block.raw_text)
-        if not text or len(text) > 120 or _PAGE_NUMBER_RE.match(text):
+        if not text or len(text) > 120 or _page_number_from_text(text) is not None:
             continue
         grouped[(zone, _normalize_repeated_text(text))].append(block)
 
@@ -116,6 +119,13 @@ def _single_line(text: str) -> str:
 
 def _normalize_repeated_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip().casefold()
+
+
+def _page_number_from_text(text: str) -> int | None:
+    match = _PAGE_NUMBER_RE.match(text.strip())
+    if match is None:
+        return None
+    return int(match.group(1))
 
 
 def _margin_zone(block: RawTextBlock) -> str | None:

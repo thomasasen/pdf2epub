@@ -35,6 +35,5 @@ def test_possible_multi_column_profile_warns(tmp_path: Path) -> None:
 
     profile = profile_pdf(pdf)
 
-    assert profile.likely_layout in {"one_column", "possible_multi_column"}
-    if profile.likely_layout == "possible_multi_column":
-        assert any(warning.code == "possible_multi_column" for warning in profile.warnings)
+    assert profile.likely_layout == "possible_multi_column"
+    assert any(warning.code == "possible_multi_column" for warning in profile.warnings)

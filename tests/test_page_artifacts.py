@@ -33,6 +33,41 @@ def test_page_numbers_are_removed_when_sequence_like() -> None:
     assert [kept.raw_text for kept in result.kept_blocks] == ["Body one", "Body two", "Body three"]
 
 
+def test_german_page_labels_are_removed_when_sequence_like() -> None:
+    blocks = [
+        block("b1", 0, "Body one", 120, 140),
+        block("n1", 0, "Seite 1", 380, 392),
+        block("b2", 1, "Body two", 120, 140),
+        block("n2", 1, "Seite 2", 380, 392),
+        block("b3", 2, "Body three", 120, 140),
+        block("n3", 2, "Seite 3", 380, 392),
+    ]
+
+    result = remove_page_artifacts(blocks)
+
+    assert [artifact.text for artifact in result.removed_artifacts] == [
+        "Seite 1",
+        "Seite 2",
+        "Seite 3",
+    ]
+    assert [kept.raw_text for kept in result.kept_blocks] == ["Body one", "Body two", "Body three"]
+
+
+def test_page_labels_are_only_removed_in_margins() -> None:
+    blocks = [
+        block("b1", 0, "See Seite 1 for details.", 120, 140),
+        block("b2", 1, "See Seite 2 for details.", 120, 140),
+    ]
+
+    result = remove_page_artifacts(blocks)
+
+    assert not result.removed_artifacts
+    assert [kept.raw_text for kept in result.kept_blocks] == [
+        "See Seite 1 for details.",
+        "See Seite 2 for details.",
+    ]
+
+
 def test_repeated_header_is_removed() -> None:
     blocks = [
         block("h1", 0, "Book Header", 22, 34),
