@@ -239,7 +239,7 @@ def test_convert_renders_obvious_text_table_semantically(tmp_path: Path) -> None
             if name.endswith(".xhtml")
         )
 
-    assert '<figure class="table"><table>' in xhtml
+    assert '<figure class="table" id="table-' in xhtml
     assert "<th>Name</th>" in xhtml
     assert "<td>Ada</td>" in xhtml
     assert 'class="body-text">Name' not in xhtml

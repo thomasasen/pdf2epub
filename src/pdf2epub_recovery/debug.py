@@ -34,7 +34,11 @@ def build_debug_payloads(result: ConversionResult) -> dict[str, dict[str, Any]]:
     table_payload = table_fallbacks_payload(result.ir.elements)
     if table_payload["table_fallbacks"]:
         payloads["table-fallbacks.json"] = table_payload
-    image_payload = images_payload(result.extracted, result.ir.elements)
+    image_payload = images_payload(
+        result.extracted,
+        result.ir.elements,
+        result.decorative_image_ids or set(),
+    )
     if image_payload["image_count"]:
         payloads["images.json"] = image_payload
     return payloads
@@ -125,7 +129,9 @@ def table_fallbacks_payload(elements: list[DocumentElement]) -> dict[str, Any]:
 
 
 def images_payload(
-    extracted: ExtractedDocument, elements: list[DocumentElement]
+    extracted: ExtractedDocument,
+    elements: list[DocumentElement],
+    decorative_image_ids: set[str] | None = None,
 ) -> dict[str, Any]:
     images = sorted(
         (image for page in extracted.pages for image in page.images),
@@ -136,10 +142,15 @@ def images_payload(
         for element in elements
         if element.element_type == "image" and element.image is not None
     }
+    decorative_image_ids = decorative_image_ids or set()
     return {
         "image_count": len(images),
         "images": [
-            _image_debug_summary(image, preserved_images.get(image.image_id))
+            _image_debug_summary(
+                image,
+                preserved_images.get(image.image_id),
+                image.image_id in decorative_image_ids,
+            )
             for image in images
         ],
     }
@@ -170,9 +181,16 @@ def _source_ref_summary(ref: SourceRef) -> dict[str, Any]:
 
 
 def _image_debug_summary(
-    image: ExtractedImage, preserved_image: DocumentImage | None
+    image: ExtractedImage,
+    preserved_image: DocumentImage | None,
+    removed_as_artifact: bool = False,
 ) -> dict[str, Any]:
-    status = "preserved" if preserved_image is not None else "not_preserved"
+    if preserved_image is not None:
+        status = "preserved"
+    elif removed_as_artifact:
+        status = "removed_as_artifact"
+    else:
+        status = "not_preserved"
     return {
         "image_id": image.image_id,
         "page_index": image.page_index,
@@ -232,10 +250,16 @@ def _element_sort_key(element: DocumentElement) -> tuple[int, float, float, str]
 def _margin_zone(block: RawTextBlock) -> str | None:
     top_limit = block.page_height * 0.12
     bottom_limit = block.page_height * 0.88
+    left_limit = block.page_width * 0.22
+    right_limit = block.page_width * 0.78
     if block.bbox.y1 <= top_limit:
         return "top"
     if block.bbox.y0 >= bottom_limit:
         return "bottom"
+    if block.bbox.x1 <= left_limit:
+        return "left"
+    if block.bbox.x0 >= right_limit:
+        return "right"
     return None
 
 

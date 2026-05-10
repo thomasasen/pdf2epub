@@ -8,7 +8,7 @@ from pathlib import Path
 from uuid import uuid4
 from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile, ZipInfo
 
-from pdf2epub_recovery.model import DocumentImage, DocumentIR
+from pdf2epub_recovery.model import DocumentImage, DocumentIR, DocumentTocEntry
 from pdf2epub_recovery.rendering.css import DEFAULT_CSS
 from pdf2epub_recovery.rendering.xhtml import render_body_xhtml
 
@@ -23,6 +23,7 @@ def render_epub(ir: DocumentIR, output_path: Path) -> None:
     identifier = f"urn:uuid:{uuid4()}"
     modified = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     images = _document_images(ir)
+    toc_entries = _document_toc_entries(ir)
 
     with ZipFile(output_path, "w") as archive:
         mimetype = ZipInfo("mimetype")
@@ -36,12 +37,12 @@ def render_epub(ir: DocumentIR, output_path: Path) -> None:
         )
         archive.writestr(
             "EPUB/toc.ncx",
-            _toc_ncx(title, identifier),
+            _toc_ncx(title, identifier, toc_entries),
             compress_type=ZIP_DEFLATED,
         )
         archive.writestr(
             "EPUB/nav.xhtml",
-            _nav_xhtml(title, language),
+            _nav_xhtml(title, language, toc_entries),
             compress_type=ZIP_DEFLATED,
         )
         archive.writestr(
@@ -69,6 +70,13 @@ def _document_images(ir: DocumentIR) -> list[DocumentImage]:
         images.append(element.image)
         seen.add(element.image.file_name)
     return images
+
+
+def _document_toc_entries(ir: DocumentIR) -> list[DocumentTocEntry]:
+    for element in ir.elements:
+        if element.element_type == "toc" and element.toc_entries:
+            return element.toc_entries
+    return []
 
 
 def _container_xml() -> str:
@@ -119,7 +127,8 @@ def _package_opf(
 """
 
 
-def _toc_ncx(title: str, identifier: str) -> str:
+def _toc_ncx(title: str, identifier: str, toc_entries: list[DocumentTocEntry]) -> str:
+    nav_points = _ncx_nav_points(title, toc_entries)
     return f"""<?xml version="1.0" encoding="utf-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
   <head>
@@ -132,19 +141,15 @@ def _toc_ncx(title: str, identifier: str) -> str:
     <text>{_xml_text(title)}</text>
   </docTitle>
   <navMap>
-    <navPoint id="navpoint-1" playOrder="1">
-      <navLabel>
-        <text>{_xml_text(title)}</text>
-      </navLabel>
-      <content src="text/text.xhtml"/>
-    </navPoint>
+{nav_points}
   </navMap>
 </ncx>
 """
 
 
-def _nav_xhtml(title: str, language: str) -> str:
+def _nav_xhtml(title: str, language: str, toc_entries: list[DocumentTocEntry]) -> str:
     language_attr = _xml_attr(language)
+    nav_items = _nav_items(title, toc_entries)
     return f"""<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -158,7 +163,7 @@ def _nav_xhtml(title: str, language: str) -> str:
   <nav epub:type="toc" id="toc">
     <h1>{_xml_text(title)}</h1>
     <ol>
-      <li><a href="text/text.xhtml">{_xml_text(title)}</a></li>
+{nav_items}
     </ol>
   </nav>
 </body>
@@ -196,3 +201,50 @@ def _xml_text(value: str) -> str:
 
 def _xml_attr(value: str) -> str:
     return escape(value, quote=True)
+
+
+def _target_href(target_id: str | None) -> str:
+    if not target_id:
+        return "text/text.xhtml"
+    return f"text/text.xhtml#{target_id}"
+
+
+def _ncx_nav_points(title: str, toc_entries: list[DocumentTocEntry]) -> str:
+    linked_entries = [entry for entry in toc_entries if entry.target_id]
+    if not linked_entries:
+        return f"""    <navPoint id="navpoint-1" playOrder="1">
+      <navLabel>
+        <text>{_xml_text(title)}</text>
+      </navLabel>
+      <content src="text/text.xhtml"/>
+    </navPoint>"""
+
+    points: list[str] = []
+    for index, entry in enumerate(linked_entries, start=1):
+        points.append(
+            f"""    <navPoint id="navpoint-{index}" playOrder="{index}">
+      <navLabel>
+        <text>{_xml_text(entry.title)}</text>
+      </navLabel>
+      <content src="{_xml_attr(_target_href(entry.target_id))}"/>
+    </navPoint>"""
+        )
+    return "\n".join(points)
+
+
+def _nav_items(title: str, toc_entries: list[DocumentTocEntry]) -> str:
+    if not toc_entries:
+        return f'      <li><a href="text/text.xhtml">{_xml_text(title)}</a></li>'
+
+    items: list[str] = []
+    for entry in toc_entries:
+        css_class = f"toc-level-{max(1, min(6, entry.level))}"
+        if entry.target_id:
+            label = (
+                f'<a href="{_xml_attr(_target_href(entry.target_id))}">'
+                f"{_xml_text(entry.title)}</a>"
+            )
+        else:
+            label = f"<span>{_xml_text(entry.title)}</span>"
+        items.append(f'      <li class="{css_class}">{label}</li>')
+    return "\n".join(items)

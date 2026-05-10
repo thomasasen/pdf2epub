@@ -60,14 +60,24 @@ def _detect_page_numbers(blocks: list[RawTextBlock]) -> list[RemovedArtifact]:
     pages = [block.page_index for block, _number in numeric_candidates]
     numbers = [number for _block, number in numeric_candidates]
 
+    offsets = Counter(number - page for page, number in zip(pages, numbers, strict=True))
+    dominant_offset, dominant_count = offsets.most_common(1)[0]
     follows_page_index = sum(
         1 for page, number in zip(pages, numbers, strict=True) if number == page + 1
     )
     is_consecutive = all(
         numbers[index] + 1 == numbers[index + 1] for index in range(len(numbers) - 1)
     )
-    if follows_page_index < 2 and not is_consecutive:
+    follows_constant_offset = dominant_count >= max(3, len(numeric_candidates) // 2)
+    if follows_page_index < 2 and not is_consecutive and not follows_constant_offset:
         return []
+
+    if follows_constant_offset and follows_page_index < 2 and not is_consecutive:
+        numeric_candidates = [
+            (block, number)
+            for block, number in numeric_candidates
+            if number - block.page_index == dominant_offset
+        ]
 
     return [
         RemovedArtifact(
@@ -98,7 +108,9 @@ def _detect_repeated_margin_text(blocks: list[RawTextBlock]) -> list[RemovedArti
         page_counts = Counter(block.page_index for block in candidates)
         if len(page_counts) < 2:
             continue
-        artifact_type = "header" if zone == "top" else "footer"
+        if zone in {"left", "right"} and len(page_counts) < 3:
+            continue
+        artifact_type = _artifact_type_for_zone(zone)
         for block in candidates:
             artifacts.append(
                 RemovedArtifact(
@@ -131,12 +143,26 @@ def _page_number_from_text(text: str) -> int | None:
 def _margin_zone(block: RawTextBlock) -> str | None:
     top_limit = block.page_height * 0.12
     bottom_limit = block.page_height * 0.88
+    left_limit = block.page_width * 0.22
+    right_limit = block.page_width * 0.78
     if block.bbox.y1 <= top_limit:
         return "top"
     if block.bbox.y0 >= bottom_limit:
         return "bottom"
+    if block.bbox.x1 <= left_limit:
+        return "left"
+    if block.bbox.x0 >= right_limit:
+        return "right"
     return None
 
 
 def _in_margin(block: RawTextBlock) -> bool:
     return _margin_zone(block) is not None
+
+
+def _artifact_type_for_zone(zone: str) -> str:
+    if zone == "top":
+        return "header"
+    if zone == "bottom":
+        return "footer"
+    return "margin_note"

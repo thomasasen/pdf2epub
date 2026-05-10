@@ -32,6 +32,7 @@ def reconstruct_paragraphs(
         segments = _split_block_paragraphs(block.raw_text)
         for segment_index, segment in enumerate(segments):
             text, block_hyphenations, block_line_wraps = _merge_block_lines(segment, dehyphenate)
+            text = _normalize_bullet_marker(text)
             if not text:
                 continue
 
@@ -102,6 +103,9 @@ def _merge_block_lines(text: str, dehyphenate: bool) -> tuple[str, int, int]:
     if not lines:
         return "", 0, 0
 
+    if len(lines) >= 2 and _is_extracted_bullet_marker(lines[0]):
+        lines = [f"\u2022 {lines[1]}", *lines[2:]]
+
     output = lines[0]
     hyphenation_repairs = 0
     line_wrap_repairs = 0
@@ -130,6 +134,25 @@ def _can_dehyphenate(current: str, next_line: str) -> bool:
     first = next_line[0]
     previous = current[-2] if len(current) >= 2 else ""
     return previous.isalpha() and first.isalpha() and first.islower()
+
+
+def _normalize_bullet_marker(text: str) -> str:
+    stripped = text.lstrip()
+    if stripped.startswith(("\u2022", "â€¢")):
+        return "\u2022 " + stripped.lstrip("\u2022â€¢").lstrip()
+    if _is_extracted_bullet_text(stripped):
+        return f"\u2022 {stripped[2:].lstrip()}"
+    return text
+
+
+def _is_extracted_bullet_text(text: str) -> bool:
+    if len(text) < 12:
+        return False
+    return bool(re.match(r"^[nl]\s+\S", text))
+
+
+def _is_extracted_bullet_marker(text: str) -> bool:
+    return text.strip() in {"n", "l", "\u2022", "â€¢"}
 
 
 def _can_merge_blocks(previous: Paragraph, block: RawTextBlock) -> bool:

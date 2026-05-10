@@ -221,7 +221,7 @@ def _table_like_band_run(row_bands: list[_RowBand], start: int) -> list[_RowBand
 
 def _is_tabular_band(band: _RowBand) -> bool:
     if len(band.blocks) >= 2:
-        return True
+        return not any(_starts_with_bullet_marker(block.raw_text) for block in band.blocks)
 
     if band.bbox.height > 36:
         return False
@@ -247,7 +247,7 @@ def _looks_like_non_table_text(text: str) -> bool:
         return True
     if len(lines) >= 2 and lines[0].isdigit() and re.match(r"^\d+\.", lines[1]):
         return True
-    if stripped.startswith(("•", "-", "–")):
+    if _starts_with_bullet_marker(stripped) or stripped.startswith(("-", "–")):
         return True
     if _DOT_LEADER_RE.match(stripped.replace("\n", "")):
         return True
@@ -410,6 +410,8 @@ def _is_table_like_text(text: str) -> bool:
     lines = [line.rstrip() for line in text.splitlines() if line.strip()]
     if len(lines) < 2:
         return False
+    if any(_starts_with_bullet_marker(line) for line in lines):
+        return False
 
     column_counts = [_column_count(line) for line in lines]
     table_rows = [count for count in column_counts if count >= 2]
@@ -493,3 +495,10 @@ def _normalize_table_text(text: str) -> str:
     while lines and not lines[-1].strip():
         lines.pop()
     return "\n".join(lines)
+
+
+def _starts_with_bullet_marker(text: str) -> bool:
+    stripped = text.lstrip()
+    if stripped.startswith(("\u2022", "â€¢")):
+        return True
+    return bool(re.match(r"^[nl]\s+\S", stripped))

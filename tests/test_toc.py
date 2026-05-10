@@ -81,3 +81,29 @@ def test_detects_toc_continuation_page_without_repeated_title() -> None:
     assert len(result.toc_elements) == 1
     assert result.toc_elements[0].toc_entries[-1].title == "3. Last chapter"
     assert [block.block_id for block in result.text_blocks] == ["p0003-b0001"]
+
+
+def test_splits_multiple_toc_entries_inside_one_pdf_block() -> None:
+    result = detect_toc_blocks(
+        [
+            block("p0001-b0001", "Inhaltsverzeichnis"),
+            block(
+                "p0001-b0002",
+                "1\nEinführung........................................................................18\n"
+                "2\nStrategieverständnis ......................................................21\n"
+                "2.1\nHistorie............................................................................22",
+            ),
+            block("p0002-b0001", "1 Einführung", page_index=1),
+        ]
+    )
+
+    assert [entry.title for entry in result.toc_elements[0].toc_entries] == [
+        "1 Einführung",
+        "2 Strategieverständnis",
+        "2.1 Historie",
+    ]
+    assert [entry.page_label for entry in result.toc_elements[0].toc_entries] == [
+        "18",
+        "21",
+        "22",
+    ]

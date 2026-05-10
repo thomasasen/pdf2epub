@@ -375,3 +375,40 @@ def test_consecutive_wrapped_paragraphs_are_not_geometry_table() -> None:
 
     assert result.table_blocks == []
     assert len(result.text_blocks) == 3
+
+
+def test_bullet_like_blocks_are_not_geometry_tables() -> None:
+    blocks = [
+        RawTextBlock(
+            block_id="p0001-b0001",
+            page_index=0,
+            page_width=300,
+            page_height=400,
+            raw_text="n First bullet wraps\nonto a second line.",
+            bbox=BBox(40, 100, 260, 125),
+            source_engine="test",
+        ),
+        RawTextBlock(
+            block_id="p0001-b0002",
+            page_index=0,
+            page_width=300,
+            page_height=400,
+            raw_text="n Second bullet wraps\nonto a second line.",
+            bbox=BBox(40, 132, 260, 157),
+            source_engine="test",
+        ),
+        RawTextBlock(
+            block_id="p0001-b0003",
+            page_index=0,
+            page_width=300,
+            page_height=400,
+            raw_text="n Third bullet wraps\nonto a second line.",
+            bbox=BBox(40, 164, 260, 189),
+            source_engine="test",
+        ),
+    ]
+
+    result = detect_table_like_blocks(blocks)
+
+    assert result.table_blocks == []
+    assert len(result.text_blocks) == 3

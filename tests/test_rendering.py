@@ -67,7 +67,7 @@ def test_xhtml_renders_semantic_table_when_rows_are_available() -> None:
 
     xhtml = render_body_xhtml(ir)
 
-    assert '<figure class="table"><table>' in xhtml
+    assert '<figure class="table" id="table-p0001-b0001"><table>' in xhtml
     assert "<thead><tr><th>Name</th><th>Score</th></tr></thead>" in xhtml
     assert "<tbody><tr><td>Ada</td><td>98</td></tr></tbody>" in xhtml
     assert "<pre>" not in xhtml
@@ -103,8 +103,8 @@ def test_xhtml_groups_bullet_paragraphs_as_list_items() -> None:
     xhtml = render_body_xhtml(ir)
 
     assert '<ul class="bullet-list">' in xhtml
-    assert "<li>Metrics: Ziel ist eine Reduktion der Abweichung.</li>" in xhtml
-    assert "<li>EB-Signal: Wenn der Business Case nachvollziehbar ist.</li>" in xhtml
+    assert '<li id="p0002">Metrics: Ziel ist eine Reduktion der Abweichung.</li>' in xhtml
+    assert '<li id="p0003">EB-Signal: Wenn der Business Case nachvollziehbar ist.</li>' in xhtml
     assert "\u2022Metrics" not in xhtml
     assert xhtml.index("</ul>") < xhtml.index("Closing paragraph.")
 
@@ -123,7 +123,7 @@ def test_xhtml_renders_highlighted_callout() -> None:
 
     xhtml = render_body_xhtml(ir)
 
-    assert '<aside class="callout">' in xhtml
+    assert '<aside class="callout" id="c0001">' in xhtml
     assert '<p class="callout-title">Win Strategy</p>' in xhtml
     assert "<p>NovaFlow positioniert sich als Führungssystem.</p>" in xhtml
 
@@ -137,7 +137,12 @@ def test_xhtml_renders_pdf_toc_without_dot_leaders() -> None:
                 element_type="toc",
                 text="Inhaltsverzeichnis",
                 toc_entries=[
-                    DocumentTocEntry("1. First Chapter", level=1, page_label="6"),
+                    DocumentTocEntry(
+                        "1. First Chapter",
+                        level=1,
+                        page_label="6",
+                        target_id="p0002",
+                    ),
                     DocumentTocEntry("Nested Section", level=2, page_label="7"),
                 ],
             )
@@ -147,7 +152,7 @@ def test_xhtml_renders_pdf_toc_without_dot_leaders() -> None:
     xhtml = render_body_xhtml(ir)
 
     assert '<nav class="pdf-toc" epub:type="toc">' in xhtml
-    assert '<li class="toc-level-1"><span>1. First Chapter</span>' in xhtml
+    assert '<li class="toc-level-1"><a href="#p0002">1. First Chapter</a>' in xhtml
     assert '<span class="toc-page">6</span>' in xhtml
     assert 'class="toc-level-2"' in xhtml
     assert ". . ." not in xhtml
@@ -214,7 +219,7 @@ def test_xhtml_renders_pipe_table_fallback_as_visible_table() -> None:
 
     xhtml = render_body_xhtml(ir)
 
-    assert '<figure class="table-fallback"><table>' in xhtml
+    assert '<figure class="table-fallback" id="table-p0001-b0001"><table>' in xhtml
     assert "<thead><tr><th>Feld</th><th>Inhalt</th></tr></thead>" in xhtml
     assert "<tbody><tr><td>Anbieter</td><td>NovaFlow</td></tr>" in xhtml
     assert "<pre>" not in xhtml
@@ -270,3 +275,38 @@ def test_render_epub_writes_minimal_epub_structure(tmp_path: Path) -> None:
     assert '<content src="text/text.xhtml"/>' in ncx
     assert "A paragraph in the generated EPUB." in chapter
     assert '<img src="../images/img0001.png" alt="Image from page 1" />' in chapter
+
+
+def test_render_epub_uses_resolved_pdf_toc_entries_for_nav_and_ncx(tmp_path: Path) -> None:
+    epub = tmp_path / "book.epub"
+    ir = DocumentIR(
+        metadata={"title": "Linked Book", "language": "en"},
+        elements=[
+            DocumentElement(
+                element_id="toc-p0001",
+                element_type="toc",
+                text="Contents",
+                toc_entries=[
+                    DocumentTocEntry("Chapter One", level=1, page_label="3", target_id="p0001"),
+                    DocumentTocEntry("Unresolved", level=1, page_label="99"),
+                ],
+            ),
+            DocumentElement(
+                element_id="p0001",
+                element_type="paragraph",
+                text="Chapter One",
+            ),
+        ],
+    )
+
+    render_epub(ir, epub)
+
+    with zipfile.ZipFile(epub) as archive:
+        nav = archive.read("EPUB/nav.xhtml").decode("utf-8")
+        ncx = archive.read("EPUB/toc.ncx").decode("utf-8")
+        chapter = archive.read("EPUB/text/text.xhtml").decode("utf-8")
+
+    assert '<a href="text/text.xhtml#p0001">Chapter One</a>' in nav
+    assert "<span>Unresolved</span>" in nav
+    assert '<content src="text/text.xhtml#p0001"/>' in ncx
+    assert '<p class="short" id="p0001">Chapter One</p>' in chapter

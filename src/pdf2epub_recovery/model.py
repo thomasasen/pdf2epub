@@ -245,6 +245,7 @@ class DocumentTocEntry:
     title: str
     level: int = 1
     page_label: str | None = None
+    target_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -267,7 +268,7 @@ class RemovedArtifact:
     """Text removed from the output with evidence and provenance."""
 
     artifact_id: str
-    artifact_type: Literal["page_number", "header", "footer"]
+    artifact_type: Literal["page_number", "header", "footer", "margin_note"]
     text: str
     source_ref: SourceRef
     reason: str
@@ -299,6 +300,7 @@ class ReportActions:
     images_detected: int = 0
     images_preserved: int = 0
     images_not_preserved: int = 0
+    decorative_images_removed: int = 0
     table_like_blocks_detected: int = 0
     tables_rendered_semantically: int = 0
     table_fallbacks_rendered: int = 0

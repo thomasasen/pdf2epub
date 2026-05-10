@@ -14,11 +14,35 @@ class ReadingOrderResult:
 
 
 def resolve_reading_order(
-    blocks: list[RawTextBlock], likely_layout: LayoutEstimate
+    blocks: list[RawTextBlock],
+    likely_layout: LayoutEstimate,
+    page_layouts: dict[int, LayoutEstimate] | None = None,
 ) -> ReadingOrderResult:
     """Order blocks conservatively for the MVP."""
 
     warnings: list[QualityWarning] = []
+    if page_layouts:
+        pages = sorted({block.page_index for block in blocks})
+        ordered_blocks: list[RawTextBlock] = []
+        for page_index in pages:
+            page_blocks = [block for block in blocks if block.page_index == page_index]
+            page_layout = page_layouts.get(page_index, likely_layout)
+            if page_layout == "possible_multi_column":
+                warnings.append(
+                    QualityWarning(
+                        code="possible_multi_column_reading_order_uncertain",
+                        message=(
+                            "Possible multi-column page; reading order uses a conservative "
+                            "column-aware fallback when columns are clear."
+                        ),
+                        page_index=page_index,
+                    )
+                )
+                ordered_blocks.extend(_order_possible_multi_column_page(page_blocks))
+                continue
+            ordered_blocks.extend(sorted(page_blocks, key=_top_to_bottom_key))
+        return ReadingOrderResult(blocks=ordered_blocks, warnings=warnings)
+
     if likely_layout == "possible_multi_column":
         pages = sorted({block.page_index for block in blocks})
         warnings.extend(
