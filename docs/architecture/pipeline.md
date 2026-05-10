@@ -1,6 +1,6 @@
 # Architecture - Pipeline
 
-The project is a recovery pipeline, not a direct converter.
+The product is a PDF2EPUB converter. Internally it uses a recovery pipeline because PDF does not contain EPUB-ready reading structure.
 
 ## Target pipeline
 

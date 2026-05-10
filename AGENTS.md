@@ -10,9 +10,9 @@ Update this file when project rules, architecture, validation, or scope changes.
 Repository name: `pdf2epub-recovery`
 
 Short description:
-> Local-first PDF-to-EPUB document recovery engine focused on clean reading order, repaired paragraphs, removed page artifacts, preserved tables/images, and honest quality reports.
+> Local-first PDF-to-EPUB converter focused on clean reading order, repaired paragraphs, removed page artifacts, preserved tables/images, and honest quality reports.
 
-This is not a naive converter. The project is a recovery pipeline.
+This is a PDF2EPUB converter. Internally, it uses a recovery pipeline because useful EPUB output requires rebuilding document structure from page-positioned PDF data.
 
 ```text
 PDF
@@ -54,7 +54,7 @@ Never pretend that a poor conversion is good.
 
 ## Current scope
 
-Current project status: MVP 1 implemented plus first structure-recovery polish.
+Current project status: MVP 1 implemented plus first converter structure polish.
 
 Primary target:
 > One-column, text-centric PDFs with native embedded text, simple images, simple tables, simple PDF table-of-contents pages, simple highlighted callouts, and repeated page artifacts.
@@ -200,11 +200,11 @@ Grow structure only when needed.
 Next slice:
 - resolve preserved PDF table-of-contents entries to safe internal EPUB links
 - replace document-specific table heuristics with more general layout evidence
-- keep multi-column recovery conservative
+- keep multi-column conversion conservative
 - keep README honest about unsupported OCR and complex layouts
 
 ## Change log
 
 - 2026-05-10: Initial Codex agent instructions created.
 - 2026-05-10: MVP 1 vertical slice implemented.
-- 2026-05-10: Added first structure-recovery polish for tables, PDF TOC, callouts, lists, links, and EPUB packaging.
+- 2026-05-10: Added first converter structure polish for tables, PDF TOC, callouts, lists, links, and EPUB packaging.

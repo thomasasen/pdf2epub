@@ -1,8 +1,8 @@
-# pdf2epub-recovery
+# PDF2EPUB Converter
 
-A local-first PDF-to-EPUB document recovery engine.
+A local-first PDF-to-EPUB converter.
 
-The goal is not to build another naive PDF converter. The goal is to recover enough document structure to produce readable EPUB files and to report uncertainty honestly.
+The goal is not to build a naive file-format wrapper. The converter recovers enough document structure to produce readable EPUB files and reports uncertainty honestly.
 
 ## Quick start
 
@@ -41,12 +41,12 @@ python -m pdf2epub_recovery web
 
 ## Current status
 
-This repository has its first MVP vertical slice plus the first document-structure polish needed for real-world PDFs.
+This repository has its first converter MVP plus the first document-structure polish needed for real-world PDFs.
 
 Implemented scope:
 - Real PDF profiling with PyMuPDF.
 - Native text block extraction with geometry and provenance.
-- Filled-rectangle highlight detection for simple callout/sidebar recovery.
+- Filled-rectangle highlight detection for simple callout/sidebar conversion.
 - Conservative removal of repeated page numbers, headers, and footers.
 - Page number cleanup supports simple English and German page labels in margins.
 - Simple one-column reading order.
@@ -79,7 +79,7 @@ Known limitations:
 - Image-only/scanned pages are reported, not recovered.
 - Complex tables are not fully reconstructed; unreliable tables use a readable fallback and warnings.
 - PDF table-of-contents entries are preserved as readable entries, but internal EPUB links are not resolved yet.
-- Highlight/callout recovery is heuristic and depends on detectable PDF drawing rectangles.
+- Highlight/callout conversion is heuristic and depends on detectable PDF drawing rectangles.
 - Masked, transparent, transformed, or unusual image encodings may be reported but not preserved.
 - Clear two-column pages use a conservative column-aware fallback, but complex multi-column documents may still warn and can have imperfect reading order.
 - EPUBCheck validation is optional and only runs if an `epubcheck` executable is configured on `PATH`.
@@ -87,7 +87,7 @@ Known limitations:
 
 ## Why this project exists
 
-Most PDF-to-EPUB workflows fail because PDF is page-position based while EPUB is structured, reflowable web content. A good tool must therefore recover document structure before rendering EPUB.
+Most PDF-to-EPUB workflows fail because PDF is page-position based while EPUB is structured, reflowable web content. A good converter must therefore recover document structure before rendering EPUB.
 
 Target pipeline:
 
@@ -106,7 +106,7 @@ PDF
 -> report quality
 ```
 
-Future phases will add stronger table/image handling, better multi-column recovery, optional validation integration, and later OCR/multi-engine workflows.
+Future phases will add stronger table/image handling, better multi-column conversion, optional validation integration, and later OCR/multi-engine workflows.
 
 ## Installation for development
 
@@ -178,7 +178,9 @@ By default it binds to `127.0.0.1:8765` and opens the browser. The page provides
 - Conversion options for artifact keeping, dehyphenation, and page limits.
 - Stage-based progress bar.
 - Live conversion log.
-- EPUB and report download links when conversion finishes.
+- Quality summary with table/image/TOC/callout/list/link indicators.
+- Concrete warning list from the quality report.
+- EPUB, report, and debug JSON download links when conversion finishes.
 
 To choose another port or avoid opening a browser automatically:
 

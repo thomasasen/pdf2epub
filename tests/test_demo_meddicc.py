@@ -1,12 +1,9 @@
-from __future__ import annotations
-
 import zipfile
 from pathlib import Path
 
 import pytest
 
 from pdf2epub_recovery.pipeline import convert_pdf_to_epub
-
 
 DEMO_MEDDICC_PDF = (
     Path(__file__).resolve().parents[1]

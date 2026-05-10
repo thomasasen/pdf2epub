@@ -4,13 +4,17 @@ Date: 2026-05-10
 
 ## Decision
 
-Use `pdf2epub-recovery` as repository name.
+Use `pdf2epub-recovery` as the repository and Python package name for now.
+
+Use **PDF2EPUB Converter** as the visible product name in user-facing UI and documentation.
 
 ## Reason
 
-The project is not just a converter. It aims to recover document structure from PDFs before producing EPUB.
+The product is a converter. The implementation still uses "recovery" internally because useful PDF-to-EPUB conversion requires recovering document structure from PDFs before rendering EPUB.
 
-The name is:
+Keeping the repository/package name stable avoids a broad rename across imports, CLI entry points, tests, and local documentation while the MVP is still moving quickly.
+
+The repository name is:
 - direct
 - searchable
 - technically accurate

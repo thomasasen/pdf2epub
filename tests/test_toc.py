@@ -22,7 +22,11 @@ def test_detects_toc_page_and_cleans_dot_leader_entries() -> None:
             block("p0001-b0001", "Inhaltsverzeichnis"),
             block("p0001-b0002", "2\nSo liest du dieses Dokument"),
             block("p0001-b0003", "6\n1. Was MEDDICC ist - und was nicht"),
-            block("p0001-b0004", ". . . . . . . . . . . . . . . . . . . . . 6\nWas MEDDICC nicht ist"),
+            block(
+                "p0001-b0004",
+                ". . . . . . . . . . . . . . . . . . . . . 6\n"
+                "Was MEDDICC nicht ist",
+            ),
             block(
                 "p0001-b0005",
                 ". . . . . . . . . . . . . . . . . . . . . 6\n"

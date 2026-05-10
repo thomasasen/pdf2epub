@@ -96,9 +96,7 @@ def _toc_page_indexes(blocks: list[RawTextBlock]) -> set[int]:
         has_title = any(_looks_like_toc_title(block.raw_text) for block in page_blocks[:5])
         entry_count = sum(1 for block in page_blocks if _toc_entry(block) is not None)
         dot_leader_count = sum(1 for block in page_blocks if _DOT_LEADER_RE.search(block.raw_text))
-        if has_title and entry_count >= 3:
-            page_indexes.add(page_index)
-        elif entry_count >= 8 and dot_leader_count >= 3:
+        if (has_title and entry_count >= 3) or (entry_count >= 8 and dot_leader_count >= 3):
             page_indexes.add(page_index)
 
     for page_index in sorted(by_page):

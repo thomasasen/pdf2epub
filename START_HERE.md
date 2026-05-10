@@ -57,18 +57,18 @@ python -m ruff check .
 
 ## Current status
 
-MVP 1 plus the first recovery polish is implemented:
+MVP 1 plus the first converter polish is implemented:
 - native-text PDF profiling and extraction
 - conservative page artifact removal
 - simple reading order, conservative clear two-column fallback, and paragraph reconstruction
 - reflowable EPUB output with OPF, NAV, NCX fallback, CSS, and simple embedded image preservation
 - obvious text-table detection with semantic XHTML tables when reliable and readable fallbacks otherwise
 - PDF table-of-contents detection with dot-leader cleanup
-- simple callout/sidebar recovery from detectable filled rectangles
+- simple callout/sidebar conversion from detectable filled rectangles
 - bullet-list rendering and clickable `http://` / `https://` links
 - debug JSON for removed artifacts, ordered blocks, kept margin blocks, table fallbacks, images, and full document IR
 - JSON quality report
-- local web UI with progress log, drag-and-drop upload, and explained options
+- local web UI with progress log, drag-and-drop upload, explained options, quality summary, warning list, and debug ZIP download
 
 Still intentionally unsupported:
 - OCR for scanned PDFs

@@ -6,7 +6,13 @@ import re
 from dataclasses import dataclass, field
 from typing import Literal
 
-from pdf2epub_recovery.model import BBox, DocumentElement, DocumentTable, QualityWarning, RawTextBlock
+from pdf2epub_recovery.model import (
+    BBox,
+    DocumentElement,
+    DocumentTable,
+    QualityWarning,
+    RawTextBlock,
+)
 
 _MULTISPACE_RE = re.compile(r"\s{2,}")
 _DOT_LEADER_RE = re.compile(r"^[\s.]+$")
@@ -177,7 +183,10 @@ def _belongs_to_current_row_band(previous: RawTextBlock, block: RawTextBlock) ->
         return False
     if _vertical_overlap(previous.bbox, block.bbox) >= 0.35:
         return True
-    return abs(previous.bbox.y0 - block.bbox.y0) <= 8 and abs(previous.bbox.y1 - block.bbox.y1) <= 12
+    return (
+        abs(previous.bbox.y0 - block.bbox.y0) <= 8
+        and abs(previous.bbox.y1 - block.bbox.y1) <= 12
+    )
 
 
 def _vertical_overlap(left: BBox, right: BBox) -> float:
@@ -222,9 +231,7 @@ def _is_tabular_band(band: _RowBand) -> bool:
     lines = _meaningful_lines(text)
     if not 2 <= len(lines) <= 6:
         return False
-    if any(len(line) > 90 for line in lines):
-        return False
-    return True
+    return not any(len(line) > 90 for line in lines)
 
 
 def _looks_like_non_table_text(text: str) -> bool:
@@ -244,9 +251,7 @@ def _looks_like_non_table_text(text: str) -> bool:
         return True
     if _DOT_LEADER_RE.match(stripped.replace("\n", "")):
         return True
-    if stripped.count(".") > 12 and len(stripped) > 40:
-        return True
-    return False
+    return stripped.count(".") > 12 and len(stripped) > 40
 
 
 def _is_plausible_table_neighbor(previous: _RowBand, band: _RowBand) -> bool:
