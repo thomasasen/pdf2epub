@@ -42,15 +42,23 @@ MVP 1 intentionally does not implement OCR, complex table reconstruction, hosted
 - [x] Detect obvious table-like blocks.
 - [x] Render simple text tables or use a safe fallback.
 - [x] Add debug artifacts for removed content and ordered blocks.
+- [x] Render reliable simple tables as semantic XHTML tables.
+- [x] Render uncertain table-like content as readable fallbacks.
+- [x] Detect and preserve simple PDF table-of-contents pages without dot leaders.
+- [x] Render simple highlighted callout blocks.
+- [x] Render bullet-like paragraphs as XHTML lists.
+- [x] Render plain web addresses as clickable links.
 
 ## Future - Better layout recovery
 
 - [x] Stronger multi-column detection.
 - [x] Column-aware reading order.
+- [ ] Resolve PDF table-of-contents entries to internal EPUB links.
 - [ ] Heading detection.
 - [ ] Footnote detection.
 - [ ] Paragraph reconstruction confidence per page.
 - [ ] Human-readable profile/report output.
+- [ ] Replace document-specific table heuristics with more general geometry/line/table evidence.
 
 ## Future - Validation and distribution
 

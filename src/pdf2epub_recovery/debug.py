@@ -7,6 +7,9 @@ from typing import TYPE_CHECKING, Any
 
 from pdf2epub_recovery.model import (
     DocumentElement,
+    DocumentImage,
+    ExtractedDocument,
+    ExtractedImage,
     RawTextBlock,
     RemovedArtifact,
     SourceRef,
@@ -31,6 +34,9 @@ def build_debug_payloads(result: ConversionResult) -> dict[str, dict[str, Any]]:
     table_payload = table_fallbacks_payload(result.ir.elements)
     if table_payload["table_fallbacks"]:
         payloads["table-fallbacks.json"] = table_payload
+    image_payload = images_payload(result.extracted, result.ir.elements)
+    if image_payload["image_count"]:
+        payloads["images.json"] = image_payload
     return payloads
 
 
@@ -96,7 +102,11 @@ def kept_margin_blocks_payload(
 
 def table_fallbacks_payload(elements: list[DocumentElement]) -> dict[str, Any]:
     table_elements = sorted(
-        (element for element in elements if element.element_type == "table"),
+        (
+            element
+            for element in elements
+            if element.element_type == "table" and element.table is None
+        ),
         key=_element_sort_key,
     )
     return {
@@ -110,6 +120,27 @@ def table_fallbacks_payload(elements: list[DocumentElement]) -> dict[str, Any]:
                 "warnings": [warning.to_dict() for warning in element.warnings],
             }
             for element in table_elements
+        ],
+    }
+
+
+def images_payload(
+    extracted: ExtractedDocument, elements: list[DocumentElement]
+) -> dict[str, Any]:
+    images = sorted(
+        (image for page in extracted.pages for image in page.images),
+        key=_image_sort_key,
+    )
+    preserved_images = {
+        element.image.image_id: element.image
+        for element in elements
+        if element.element_type == "image" and element.image is not None
+    }
+    return {
+        "image_count": len(images),
+        "images": [
+            _image_debug_summary(image, preserved_images.get(image.image_id))
+            for image in images
         ],
     }
 
@@ -138,12 +169,51 @@ def _source_ref_summary(ref: SourceRef) -> dict[str, Any]:
     }
 
 
+def _image_debug_summary(
+    image: ExtractedImage, preserved_image: DocumentImage | None
+) -> dict[str, Any]:
+    status = "preserved" if preserved_image is not None else "not_preserved"
+    return {
+        "image_id": image.image_id,
+        "page_index": image.page_index,
+        "placement": {
+            "page_width": image.page_width,
+            "page_height": image.page_height,
+            "bbox": json_ready(image.bbox),
+        },
+        "provenance": {
+            "source_engine": image.source_engine,
+            "xref": image.xref,
+        },
+        "preservation": {
+            "status": status,
+            "file_name": preserved_image.file_name if preserved_image else None,
+            "media_type": preserved_image.media_type if preserved_image else image.media_type,
+            "extension": image.extension,
+            "byte_count": len(image.data) if image.data else 0,
+            "pixel_width": image.pixel_width,
+            "pixel_height": image.pixel_height,
+            "confidence": image.confidence,
+            "warnings": [warning.to_dict() for warning in image.warnings],
+        },
+    }
+
+
 def _block_sort_key(block: RawTextBlock) -> tuple[int, float, float, str]:
     return (
         block.page_index,
         round(block.bbox.y0, 3),
         round(block.bbox.x0, 3),
         block.block_id,
+    )
+
+
+def _image_sort_key(image: ExtractedImage) -> tuple[int, float, float, str]:
+    return (
+        image.page_index,
+        round(image.bbox.y0, 3),
+        round(image.bbox.x0, 3),
+        image.image_id,
     )
 
 

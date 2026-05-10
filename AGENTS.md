@@ -54,10 +54,10 @@ Never pretend that a poor conversion is good.
 
 ## Current scope
 
-Current project status: MVP 1 implemented.
+Current project status: MVP 1 implemented plus first structure-recovery polish.
 
 Primary target:
-> One-column, text-centric PDFs with native embedded text, simple images, simple tables, and repeated page artifacts.
+> One-column, text-centric PDFs with native embedded text, simple images, simple tables, simple PDF table-of-contents pages, simple highlighted callouts, and repeated page artifacts.
 
 Early non-goals:
 - Perfect conversion of every PDF.
@@ -181,6 +181,9 @@ src/pdf2epub_recovery/
   model.py
   profiling/
   extraction/
+  cleaning/
+  reading_order/
+  structure/
   rendering/
   validation/
 docs/
@@ -195,8 +198,8 @@ Grow structure only when needed.
 ## Current next step
 
 Next slice:
-- preserve simple images or report them with stronger detail
-- improve simple table fallback
+- resolve preserved PDF table-of-contents entries to safe internal EPUB links
+- replace document-specific table heuristics with more general layout evidence
 - keep multi-column recovery conservative
 - keep README honest about unsupported OCR and complex layouts
 
@@ -204,3 +207,4 @@ Next slice:
 
 - 2026-05-10: Initial Codex agent instructions created.
 - 2026-05-10: MVP 1 vertical slice implemented.
+- 2026-05-10: Added first structure-recovery polish for tables, PDF TOC, callouts, lists, links, and EPUB packaging.

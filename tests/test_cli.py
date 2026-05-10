@@ -5,7 +5,12 @@ import zipfile
 from pathlib import Path
 
 from pdf2epub_recovery.cli import main
-from tests.helpers import write_text_and_image_pdf, write_text_pdf, write_text_table_pdf
+from tests.helpers import (
+    write_text_and_image_pdf,
+    write_text_pdf,
+    write_text_table_pdf,
+    write_uncertain_text_table_pdf,
+)
 
 
 def test_help_runs(capsys) -> None:
@@ -186,11 +191,31 @@ def test_convert_preserves_simple_embedded_image(tmp_path: Path) -> None:
 
     assert any(name.endswith(".png") for name in names)
     assert "<figure" in xhtml
-    assert '<img src="images/' in xhtml
+    assert '<img src="../images/' in xhtml
     assert "Image from page 1" in xhtml
 
 
-def test_convert_preserves_obvious_text_table_as_fallback(tmp_path: Path) -> None:
+def test_convert_writes_image_debug_artifacts(tmp_path: Path) -> None:
+    pdf = tmp_path / "sample-image.pdf"
+    write_text_and_image_pdf(pdf)
+    epub = tmp_path / "book.epub"
+    debug_dir = tmp_path / "debug"
+
+    exit_code = main(["convert", str(pdf), "--out", str(epub), "--debug-dir", str(debug_dir)])
+
+    assert exit_code == 0
+    payload = json.loads((debug_dir / "images.json").read_text(encoding="utf-8"))
+    assert payload["image_count"] == 1
+    image = payload["images"][0]
+    assert image["image_id"].startswith("p0001-img")
+    assert image["placement"]["bbox"]["x0"] >= 0
+    assert image["provenance"]["source_engine"] == "pymupdf"
+    assert image["preservation"]["status"] == "preserved"
+    assert image["preservation"]["file_name"].startswith("images/")
+    assert image["preservation"]["byte_count"] > 0
+
+
+def test_convert_renders_obvious_text_table_semantically(tmp_path: Path) -> None:
     pdf = tmp_path / "sample-table.pdf"
     write_text_table_pdf(pdf)
     epub = tmp_path / "book.epub"
@@ -201,8 +226,11 @@ def test_convert_preserves_obvious_text_table_as_fallback(tmp_path: Path) -> Non
     assert exit_code == 0
     report_payload = json.loads(report.read_text(encoding="utf-8"))
     assert report_payload["actions"]["table_like_blocks_detected"] == 1
-    assert report_payload["actions"]["table_fallbacks_rendered"] == 1
-    assert any(warning["code"] == "table_fallback_used" for warning in report_payload["warnings"])
+    assert report_payload["actions"]["tables_rendered_semantically"] == 1
+    assert report_payload["actions"]["table_fallbacks_rendered"] == 0
+    assert not any(
+        warning["code"] == "table_fallback_used" for warning in report_payload["warnings"]
+    )
 
     with zipfile.ZipFile(epub) as archive:
         xhtml = "\n".join(
@@ -211,14 +239,15 @@ def test_convert_preserves_obvious_text_table_as_fallback(tmp_path: Path) -> Non
             if name.endswith(".xhtml")
         )
 
-    assert 'class="table-fallback"' in xhtml
-    assert "<pre>Name        Score       Grade" in xhtml
+    assert '<figure class="table"><table>' in xhtml
+    assert "<th>Name</th>" in xhtml
+    assert "<td>Ada</td>" in xhtml
     assert 'class="body-text">Name' not in xhtml
 
 
 def test_convert_writes_table_fallback_debug_when_tables_exist(tmp_path: Path) -> None:
     pdf = tmp_path / "sample-table.pdf"
-    write_text_table_pdf(pdf)
+    write_uncertain_text_table_pdf(pdf)
     epub = tmp_path / "book.epub"
     debug_dir = tmp_path / "debug"
 
@@ -229,7 +258,7 @@ def test_convert_writes_table_fallback_debug_when_tables_exist(tmp_path: Path) -
     assert payload["table_fallback_count"] == 1
     fallback = payload["table_fallbacks"][0]
     assert fallback["element_id"].startswith("table-")
-    assert "Name        Score       Grade" in fallback["text"]
+    assert "Name Score Grade" in fallback["text"]
     assert fallback["confidence"] == 0.65
     assert fallback["warnings"][0]["code"] == "table_fallback_used"
 

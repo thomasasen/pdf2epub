@@ -88,6 +88,7 @@ class RawTextBlock:
     raw_text: str
     bbox: BBox
     source_engine: str
+    is_highlighted: bool = False
     confidence: float = 1.0
     warnings: list[QualityWarning] = field(default_factory=list)
 
@@ -207,6 +208,7 @@ class Paragraph:
     element_id: str
     text: str
     source_refs: list[SourceRef]
+    is_highlighted: bool = False
     confidence: float = 0.9
     warnings: list[QualityWarning] = field(default_factory=list)
 
@@ -228,16 +230,36 @@ class DocumentImage:
 
 
 @dataclass(frozen=True)
+class DocumentTable:
+    """Conservatively recovered table data ready for semantic XHTML."""
+
+    rows: list[list[str]]
+    source_format: Literal["multispace", "pipe", "tab"]
+    header_row: bool = True
+
+
+@dataclass(frozen=True)
+class DocumentTocEntry:
+    """Recovered table-of-contents entry without unsafe link targets."""
+
+    title: str
+    level: int = 1
+    page_label: str | None = None
+
+
+@dataclass(frozen=True)
 class DocumentElement:
     """Generic document IR element."""
 
     element_id: str
-    element_type: Literal["paragraph", "image", "table", "warning"]
+    element_type: Literal["paragraph", "callout", "image", "table", "toc", "warning"]
     text: str = ""
     source_refs: list[SourceRef] = field(default_factory=list)
     confidence: float = 0.9
     warnings: list[QualityWarning] = field(default_factory=list)
     image: DocumentImage | None = None
+    table: DocumentTable | None = None
+    toc_entries: list[DocumentTocEntry] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -278,6 +300,7 @@ class ReportActions:
     images_preserved: int = 0
     images_not_preserved: int = 0
     table_like_blocks_detected: int = 0
+    tables_rendered_semantically: int = 0
     table_fallbacks_rendered: int = 0
 
 

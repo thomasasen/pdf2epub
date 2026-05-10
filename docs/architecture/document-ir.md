@@ -28,6 +28,8 @@ The current implementation keeps the model intentionally small:
 - `PdfProfile`
 - `Paragraph`
 - `DocumentImage`
+- `DocumentTable`
+- `DocumentTocEntry`
 - `DocumentElement`
 - `RemovedArtifact`
 - `DocumentIR`
@@ -35,17 +37,28 @@ The current implementation keeps the model intentionally small:
 
 ## Element types
 
-Current MVP renders:
+Current implementation renders:
 - `paragraph`
+- `callout`
 - `image`
 - `table`
+- `toc`
+- `warning`
 
 Reserved future element types:
 - `heading`
 - `caption`
 - `footnote`
 - `page_artifact`
-- `warning`
+
+## Current structure notes
+
+- `paragraph` preserves reconstructed text and source refs. Paragraphs that came from detectable highlighted regions can become `callout` elements.
+- `callout` is a heuristic recovery of highlighted/sidebar-like source blocks. It is not a promise that the original visual design was fully understood.
+- `image` preserves simple embedded PNG, JPEG, and GIF image bytes with provenance when PyMuPDF can extract them directly.
+- `table` can carry a structured `DocumentTable` for reliable row/cell reconstruction. If that is not reliable, the element keeps source text and renders as a readable fallback.
+- `toc` carries `DocumentTocEntry` entries recovered from PDF table-of-contents pages. Dot leaders are removed and page labels are kept, but internal EPUB links are not resolved yet.
+- `warning` is available for explicit warning elements, although most current warnings live in the quality report.
 
 ## Design rule
 
@@ -147,9 +160,31 @@ If a paragraph was created from multiple PDF blocks, the IR must know that. If a
       "warnings": [
         {
           "code": "table_fallback_used",
-          "message": "Possible table-like text was preserved as a preformatted fallback; full table reconstruction is not implemented.",
+          "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
           "severity": "warning",
           "page_index": 1
+        }
+      ]
+    },
+    {
+      "element_id": "toc-p0002",
+      "element_type": "toc",
+      "text": "Inhaltsverzeichnis",
+      "source_refs": [],
+      "confidence": 0.72,
+      "warnings": [
+        {
+          "code": "toc_links_not_resolved",
+          "message": "Table of contents was detected and cleaned, but EPUB links were not created because destination anchors are not resolved yet.",
+          "severity": "info",
+          "page_index": 1
+        }
+      ],
+      "toc_entries": [
+        {
+          "title": "1. Was MEDDICC ist - und was nicht",
+          "level": 1,
+          "page_label": "6"
         }
       ]
     }

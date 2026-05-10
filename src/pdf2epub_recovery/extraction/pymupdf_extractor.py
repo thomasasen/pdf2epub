@@ -45,6 +45,7 @@ class PyMuPDFExtractor:
                     page = document.load_page(page_index)
                     rect = page.rect
                     blocks: list[RawTextBlock] = []
+                    highlight_rects = _extract_highlight_rects(page)
 
                     for raw in page.get_text("blocks"):
                         x0, y0, x1, y1, text, _block_no, block_type = _parse_block(raw)
@@ -58,15 +59,15 @@ class PyMuPDFExtractor:
                             continue
 
                         blocks.append(
-                            RawTextBlock(
-                                block_id=f"p{page_index + 1:04d}-b{len(blocks) + 1:04d}",
+                            _raw_text_block(
                                 page_index=page_index,
+                                block_index=len(blocks),
                                 page_width=float(rect.width),
                                 page_height=float(rect.height),
                                 raw_text=normalized,
                                 bbox=BBox(float(x0), float(y0), float(x1), float(y1)),
                                 source_engine=self.source_engine,
-                                confidence=1.0,
+                                highlight_rects=highlight_rects,
                             )
                         )
 
@@ -131,6 +132,73 @@ def _parse_block(raw: tuple[Any, ...]) -> tuple[float, float, float, float, str,
 
 def _normalize_block_text(text: str) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n").strip("\n")
+
+
+def _raw_text_block(
+    *,
+    page_index: int,
+    block_index: int,
+    page_width: float,
+    page_height: float,
+    raw_text: str,
+    bbox: BBox,
+    source_engine: str,
+    highlight_rects: list[BBox],
+) -> RawTextBlock:
+    return RawTextBlock(
+        block_id=f"p{page_index + 1:04d}-b{block_index + 1:04d}",
+        page_index=page_index,
+        page_width=page_width,
+        page_height=page_height,
+        raw_text=raw_text,
+        bbox=bbox,
+        source_engine=source_engine,
+        is_highlighted=_is_inside_any_rect(bbox, highlight_rects),
+        confidence=1.0,
+    )
+
+
+def _extract_highlight_rects(page: Any) -> list[BBox]:
+    rects: list[BBox] = []
+    for drawing in page.get_drawings():
+        rect = drawing.get("rect")
+        fill = drawing.get("fill")
+        if rect is None or fill is None:
+            continue
+        if not _looks_like_highlight_fill(fill):
+            continue
+        bbox = BBox(float(rect.x0), float(rect.y0), float(rect.x1), float(rect.y1))
+        if bbox.width < 80 or bbox.height < 30:
+            continue
+        rects.append(bbox)
+    return rects
+
+
+def _looks_like_highlight_fill(fill: Any) -> bool:
+    try:
+        red, green, blue = (float(fill[0]), float(fill[1]), float(fill[2]))
+    except (TypeError, ValueError, IndexError):
+        return False
+
+    brightness = (red + green + blue) / 3
+    if brightness < 0.45:
+        return False
+    if brightness > 0.985:
+        return False
+    return max(red, green, blue) - min(red, green, blue) > 0.025
+
+
+def _is_inside_any_rect(bbox: BBox, rects: list[BBox]) -> bool:
+    return any(_rect_contains_block(rect, bbox) for rect in rects)
+
+
+def _rect_contains_block(rect: BBox, block: BBox) -> bool:
+    center_x = (block.x0 + block.x1) / 2
+    center_y = (block.y0 + block.y1) / 2
+    return (
+        rect.x0 - 2 <= center_x <= rect.x1 + 2
+        and rect.y0 - 2 <= center_y <= rect.y1 + 2
+    )
 
 
 def _extract_page_images(

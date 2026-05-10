@@ -41,6 +41,7 @@ def reconstruct_paragraphs(
                 element_id="",
                 text=text,
                 source_refs=[block.source_ref()],
+                is_highlighted=block.is_highlighted,
                 confidence=0.9,
             )
 
@@ -49,6 +50,7 @@ def reconstruct_paragraphs(
                     element_id="",
                     text=f"{pending.text} {current.text}",
                     source_refs=[*pending.source_refs, *current.source_refs],
+                    is_highlighted=pending.is_highlighted,
                     confidence=min(pending.confidence, current.confidence, 0.85),
                 )
                 line_wrap_repairs += 1
@@ -66,6 +68,7 @@ def reconstruct_paragraphs(
             element_id=f"p{index + 1:04d}",
             text=paragraph.text,
             source_refs=paragraph.source_refs,
+            is_highlighted=paragraph.is_highlighted,
             confidence=paragraph.confidence,
             warnings=paragraph.warnings,
         )
@@ -84,7 +87,7 @@ def paragraphs_to_elements(paragraphs: list[Paragraph]) -> list[DocumentElement]
     return [
         DocumentElement(
             element_id=paragraph.element_id,
-            element_type="paragraph",
+            element_type="callout" if paragraph.is_highlighted else "paragraph",
             text=paragraph.text,
             source_refs=paragraph.source_refs,
             confidence=paragraph.confidence,
@@ -131,6 +134,8 @@ def _can_dehyphenate(current: str, next_line: str) -> bool:
 
 def _can_merge_blocks(previous: Paragraph, block: RawTextBlock) -> bool:
     last_ref = previous.source_refs[-1]
+    if previous.is_highlighted != block.is_highlighted:
+        return False
     if last_ref.page_index != block.page_index:
         return False
     if abs(last_ref.bbox.x0 - block.bbox.x0) > 8:

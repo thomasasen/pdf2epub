@@ -1,24 +1,25 @@
 {
   "input_path": "demo\\MEDDICC_Einfuehrung_und_Praxisleitfaden_erweitert.pdf",
   "output_path": "demo\\MEDDICC_Einfuehrung_und_Praxisleitfaden_erweitert.epub",
-  "status": "ok",
+  "status": "warning",
   "quality_score": 100,
   "page_count": 28,
   "native_text_page_count": 28,
   "image_only_or_no_text_page_count": 0,
   "total_raw_blocks": 750,
-  "total_paragraphs": 723,
+  "total_paragraphs": 468,
   "actions": {
-    "page_numbers_removed": 0,
+    "page_numbers_removed": 27,
     "headers_removed": 27,
     "footers_removed": 0,
     "hyphenations_repaired": 0,
-    "line_wraps_repaired": 630,
+    "line_wraps_repaired": 296,
     "images_detected": 0,
     "images_preserved": 0,
     "images_not_preserved": 0,
-    "table_like_blocks_detected": 0,
-    "table_fallbacks_rendered": 0
+    "table_like_blocks_detected": 146,
+    "tables_rendered_semantically": 0,
+    "table_fallbacks_rendered": 16
   },
   "removed_artifacts": [
     {
@@ -40,6 +41,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0002-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 2",
+      "source_ref": {
+        "page_index": 1,
+        "block_id": "p0002-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0003-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -56,6 +75,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0003-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 3",
+      "source_ref": {
+        "page_index": 2,
+        "block_id": "p0003-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0004-b0001",
@@ -76,6 +113,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0004-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 4",
+      "source_ref": {
+        "page_index": 3,
+        "block_id": "p0004-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0005-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -92,6 +147,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0005-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 5",
+      "source_ref": {
+        "page_index": 4,
+        "block_id": "p0005-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0006-b0001",
@@ -112,6 +185,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0006-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 6",
+      "source_ref": {
+        "page_index": 5,
+        "block_id": "p0006-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0007-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -128,6 +219,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0007-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 7",
+      "source_ref": {
+        "page_index": 6,
+        "block_id": "p0007-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0008-b0001",
@@ -148,6 +257,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0008-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 8",
+      "source_ref": {
+        "page_index": 7,
+        "block_id": "p0008-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0009-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -164,6 +291,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0009-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 9",
+      "source_ref": {
+        "page_index": 8,
+        "block_id": "p0009-b0002",
+        "bbox": {
+          "x0": 508.92401123046875,
+          "y0": 804.2506713867188,
+          "x1": 538.5804443359375,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0010-b0001",
@@ -184,6 +329,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0010-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 10",
+      "source_ref": {
+        "page_index": 9,
+        "block_id": "p0010-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0011-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -200,6 +363,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0011-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 11",
+      "source_ref": {
+        "page_index": 10,
+        "block_id": "p0011-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0012-b0001",
@@ -220,6 +401,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0012-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 12",
+      "source_ref": {
+        "page_index": 11,
+        "block_id": "p0012-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0013-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -236,6 +435,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0013-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 13",
+      "source_ref": {
+        "page_index": 12,
+        "block_id": "p0013-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0014-b0001",
@@ -256,6 +473,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0014-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 14",
+      "source_ref": {
+        "page_index": 13,
+        "block_id": "p0014-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0015-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -272,6 +507,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0015-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 15",
+      "source_ref": {
+        "page_index": 14,
+        "block_id": "p0015-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0016-b0001",
@@ -292,6 +545,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0016-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 16",
+      "source_ref": {
+        "page_index": 15,
+        "block_id": "p0016-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0017-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -308,6 +579,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0017-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 17",
+      "source_ref": {
+        "page_index": 16,
+        "block_id": "p0017-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0018-b0001",
@@ -328,6 +617,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0018-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 18",
+      "source_ref": {
+        "page_index": 17,
+        "block_id": "p0018-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0019-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Einfuehrung und Praxisleitfaden",
@@ -344,6 +651,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0019-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 19",
+      "source_ref": {
+        "page_index": 18,
+        "block_id": "p0019-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0020-b0001",
@@ -364,6 +689,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0020-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 20",
+      "source_ref": {
+        "page_index": 19,
+        "block_id": "p0020-b0002",
+        "bbox": {
+          "x0": 503.5159912109375,
+          "y0": 804.2506713867188,
+          "x1": 538.5784301757812,
+          "y1": 812.7506713867188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0021-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Praxis-Ergänzung und Tools",
@@ -380,6 +723,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0021-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 21",
+      "source_ref": {
+        "page_index": 20,
+        "block_id": "p0021-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0022-b0001",
@@ -400,6 +761,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0022-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 22",
+      "source_ref": {
+        "page_index": 21,
+        "block_id": "p0022-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0023-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Praxis-Ergänzung und Tools",
@@ -416,6 +795,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0023-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 23",
+      "source_ref": {
+        "page_index": 22,
+        "block_id": "p0023-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0024-b0001",
@@ -436,6 +833,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0024-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 24",
+      "source_ref": {
+        "page_index": 23,
+        "block_id": "p0024-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0025-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Praxis-Ergänzung und Tools",
@@ -452,6 +867,24 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0025-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 25",
+      "source_ref": {
+        "page_index": 24,
+        "block_id": "p0025-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     },
     {
       "artifact_id": "a-header-p0026-b0001",
@@ -472,6 +905,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0026-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 26",
+      "source_ref": {
+        "page_index": 25,
+        "block_id": "p0026-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0027-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Praxis-Ergänzung und Tools",
@@ -490,6 +941,24 @@
       "confidence": 0.9
     },
     {
+      "artifact_id": "a-page-number-p0027-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 27",
+      "source_ref": {
+        "page_index": 26,
+        "block_id": "p0027-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
+    },
+    {
       "artifact_id": "a-header-p0028-b0001",
       "artifact_type": "header",
       "text": "MEDDICC kompakt - Praxis-Ergänzung und Tools",
@@ -506,14 +975,135 @@
       },
       "reason": "Repeated top margin text appears on multiple pages.",
       "confidence": 0.9
+    },
+    {
+      "artifact_id": "a-page-number-p0028-b0002",
+      "artifact_type": "page_number",
+      "text": "Seite 28",
+      "source_ref": {
+        "page_index": 27,
+        "block_id": "p0028-b0002",
+        "bbox": {
+          "x0": 507.1225891113281,
+          "y0": 812.3746948242188,
+          "x1": 544.24755859375,
+          "y1": 821.3746948242188
+        },
+        "engine": "pymupdf"
+      },
+      "reason": "Margin text follows a repeated page-number sequence.",
+      "confidence": 0.95
     }
   ],
   "reading_order_warnings": [],
   "unsupported_feature_warnings": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "toc_links_not_resolved",
+      "message": "Table of contents was detected and cleaned, but EPUB links were not created because destination anchors are not resolved yet.",
+      "severity": "info",
+      "page_index": 1
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 5
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 6
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 11
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 12
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 12
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 13
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 14
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 16
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 18
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 20
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 22
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 23
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 24
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 24
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 25
+    },
+    {
+      "code": "table_fallback_used",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
+      "severity": "warning",
+      "page_index": 26
+    }
+  ],
   "dependency_notes": [
     "PyMuPDF used for native text extraction.",
-    "EbookLib used for basic EPUB writing.",
+    "EPUB written with the project stdlib-based minimal EPUB writer.",
     "EPUBCheck is optional and not run during conversion."
   ],
   "validation": {

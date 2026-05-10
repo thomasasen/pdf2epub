@@ -26,7 +26,6 @@ classifiers = [
   "Topic :: Utilities"
 ]
 dependencies = [
-  "EbookLib>=0.18",
   "PyMuPDF>=1.24"
 ]
 

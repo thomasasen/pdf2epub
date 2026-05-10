@@ -82,3 +82,19 @@ def write_text_table_pdf(path: Path) -> None:
     )
     document.save(path)
     document.close()
+
+
+def write_uncertain_text_table_pdf(path: Path) -> None:
+    import fitz  # type: ignore[import-not-found]
+
+    document = fitz.open()
+    document.set_metadata({"title": "Uncertain Table Sample"})
+    page = document.new_page(width=360, height=420)
+    page.insert_text(
+        (55, 135),
+        "Name Score Grade\nAda         98          A\nGrace       91          A",
+        fontsize=10,
+        fontname="cour",
+    )
+    document.save(path)
+    document.close()

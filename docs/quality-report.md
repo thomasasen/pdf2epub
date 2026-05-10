@@ -2,9 +2,9 @@
 
 The quality report is a first-class feature.
 
-A user should know whether the EPUB is trustworthy before reading 300 pages. MVP 1 writes the report as JSON when `convert --report` is passed.
+A user should know whether the EPUB is trustworthy before reading 300 pages. The converter writes the report as JSON when `convert --report` is passed.
 
-For developer inspection, `convert --debug-dir` also writes separate debug JSON files for removed artifacts, ordered blocks, kept margin blocks, and table fallbacks.
+For developer inspection, `convert --debug-dir` also writes separate debug JSON files for removed artifacts, ordered blocks, kept margin blocks, table fallbacks, detected images, and the full document IR.
 
 ## Report goals
 
@@ -16,7 +16,9 @@ The report answers:
 - Was reading order uncertain?
 - Were unsupported features detected?
 - Were detected images preserved or reported as unsupported?
-- Were table-like blocks preserved with a fallback?
+- Were table-like blocks rendered semantically or preserved with a fallback?
+- Was a PDF table of contents detected and preserved without unsafe links?
+- Were simple callouts, bullet lists, and clickable web links recovered in EPUB output?
 - Was EPUB validation run?
 - Which warnings need manual review?
 
@@ -43,7 +45,8 @@ The report answers:
     "images_preserved": 4,
     "images_not_preserved": 2,
     "table_like_blocks_detected": 3,
-    "table_fallbacks_rendered": 3
+    "tables_rendered_semantically": 1,
+    "table_fallbacks_rendered": 2
   },
   "removed_artifacts": [
     {
@@ -77,14 +80,20 @@ The report answers:
   "warnings": [
     {
       "code": "table_fallback_used",
-      "message": "Possible table-like text was preserved as a preformatted fallback; full table reconstruction is not implemented.",
+      "message": "Possible block-structured table was preserved as a preformatted fallback because reliable cell reconstruction is not implemented yet.",
       "severity": "warning",
       "page_index": 23
+    },
+    {
+      "code": "toc_links_not_resolved",
+      "message": "Table of contents was detected and cleaned, but EPUB links were not created because destination anchors are not resolved yet.",
+      "severity": "info",
+      "page_index": 1
     }
   ],
   "dependency_notes": [
     "PyMuPDF used for native text extraction.",
-    "EbookLib used for basic EPUB writing.",
+    "EPUB written with the project stdlib-based minimal EPUB writer.",
     "EPUBCheck is optional and not run during conversion."
   ],
   "validation": {
@@ -101,7 +110,7 @@ The report answers:
 
 ## Scoring model
 
-MVP 1 uses a simple explainable score starting at 100 and subtracting for:
+The current scoring model starts at 100 and subtracts for:
 - textless/image-only pages
 - possible multi-column layout
 - reading-order warnings
@@ -110,6 +119,8 @@ MVP 1 uses a simple explainable score starting at 100 and subtracting for:
 
 The score is not a promise of perfect conversion. It is a compact risk signal backed by the detailed warnings and action counts.
 
+Some recovered structures, such as PDF table-of-contents entries, callouts, lists, and clickable web links, are currently represented in `document-ir.json` and EPUB output. They do not yet have dedicated action counters in the report.
+
 ## Debug JSON
 
 `convert --debug-dir debug` writes:
@@ -117,5 +128,7 @@ The score is not a promise of perfect conversion. It is a compact risk signal ba
 - `ordered-blocks.json`: text blocks after page artifact cleanup and reading-order resolution.
 - `kept-margin-blocks.json`: margin-area blocks that were kept for manual inspection.
 - `table-fallbacks.json`: table fallback elements when detected, including source refs, text, confidence, and warnings.
+- `images.json`: detected image occurrences when present, including placement, provenance, and preservation status.
+- `document-ir.json`: the normalized structure rendered to EPUB, including `paragraph`, `callout`, `toc`, `table`, and `image` elements.
 
 These files are diagnostic artifacts, not a replacement for the user-facing quality report.

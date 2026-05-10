@@ -41,20 +41,24 @@ python -m pdf2epub_recovery web
 
 ## Current status
 
-This repository has its first MVP vertical slice.
+This repository has its first MVP vertical slice plus the first document-structure polish needed for real-world PDFs.
 
-Implemented MVP 1 scope:
+Implemented scope:
 - Real PDF profiling with PyMuPDF.
 - Native text block extraction with geometry and provenance.
+- Filled-rectangle highlight detection for simple callout/sidebar recovery.
 - Conservative removal of repeated page numbers, headers, and footers.
 - Page number cleanup supports simple English and German page labels in margins.
 - Simple one-column reading order.
 - Basic paragraph reconstruction and conservative dehyphenation.
-- Basic reflowable EPUB output with EbookLib.
-- Reader-friendly EPUB CSS and basic paragraph spacing.
+- Reflowable EPUB output with a small stdlib-based writer, OPF, NAV, and NCX fallback.
+- Reader-friendly EPUB CSS, paragraph spacing, table styling, and simple callout styling.
+- Bullet-like source paragraphs rendered as XHTML lists.
+- Plain `http://` and `https://` web addresses rendered as clickable links.
 - Simple embedded image preservation in EPUB output.
 - Image preservation counts and unsupported-image warnings in reports.
-- Obvious text-table detection with preformatted EPUB fallback.
+- Obvious text-table detection with semantic XHTML tables when reliable and visible or preformatted fallbacks otherwise.
+- PDF table-of-contents detection that removes dot leaders and keeps page labels as readable text.
 - Conservative column-aware reading order for clearly separated two-column pages.
 - JSON quality reports.
 - CLI-first, local/offline workflow.
@@ -67,14 +71,19 @@ Supported input:
 - Text-centric PDFs with simple repeated page artifacts.
 - Simple embedded PNG, JPEG, and GIF images that PyMuPDF can extract directly.
 - Obvious text tables with spacing, tabs, or pipe-separated columns.
+- Simple PDF table-of-contents pages with dot leaders and page labels.
+- Simple highlighted callout/sidebar blocks drawn as filled rectangles.
 
 Known limitations:
 - OCR is not implemented.
 - Image-only/scanned pages are reported, not recovered.
-- Complex tables are not reconstructed; simple text tables use a readable fallback.
+- Complex tables are not fully reconstructed; unreliable tables use a readable fallback and warnings.
+- PDF table-of-contents entries are preserved as readable entries, but internal EPUB links are not resolved yet.
+- Highlight/callout recovery is heuristic and depends on detectable PDF drawing rectangles.
 - Masked, transparent, transformed, or unusual image encodings may be reported but not preserved.
 - Clear two-column pages use a conservative column-aware fallback, but complex multi-column documents may still warn and can have imperfect reading order.
 - EPUBCheck validation is optional and only runs if an `epubcheck` executable is configured on `PATH`.
+- PyMuPDF is currently a required extraction dependency; it is AGPL/commercial licensed and should be replaced or isolated behind an optional adapter before broader distribution.
 
 ## Why this project exists
 
@@ -88,10 +97,12 @@ PDF
 -> extract blocks with geometry
 -> remove safe page artifacts
 -> resolve reading order, including conservative clear two-column fallback
+-> detect and clean PDF table-of-contents pages
+-> detect obvious text tables before paragraph merging
 -> rebuild paragraphs
+-> preserve simple callouts, bullet lists, and clickable web links
 -> preserve simple images or report unsupported cases
--> preserve obvious text tables as fallback blocks
--> render EPUB
+-> render EPUB with a minimal stdlib writer and semantic XHTML
 -> report quality
 ```
 
@@ -150,6 +161,9 @@ pdf2epub-recovery convert input.pdf --out book.epub --max-pages 25
 - `ordered-blocks.json`
 - `kept-margin-blocks.json`
 - `table-fallbacks.json` when table fallback elements exist
+- `images.json` when image occurrences exist
+
+`document-ir.json` is the best place to inspect recovered structure such as `toc`, `callout`, `table`, `image`, and `paragraph` elements.
 
 ## Local web interface
 
